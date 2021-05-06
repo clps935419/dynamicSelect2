@@ -1,0 +1,169 @@
+/*****步驟*****/
+.step-area {
+    width: 100%;
+    margin-top: 5px;
+    position: relative;
+
+    &::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+}
+
+.step-ul {
+    width: 100%;
+    float: left;
+}
+
+.step-ul li {
+    float: left;
+    cursor: default;
+    padding: 7px 30px 4px 15px;
+    position: relative;
+}
+
+.step-ul li.one-row {
+    padding: 9px 30px 7px 15px;
+}
+
+.step-num {
+    height: 22px;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+}
+
+.step-name {
+    height: 22px;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 22px;
+    vertical-align: middle;
+}
+
+.step-name.one-row {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.step-arrow {
+    width: 25px;
+    height: 55px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.step-arrow.one-row {
+    height: 38px;
+}
+
+.step-ul .step-finish .step-arrow:before,
+.step-ul .step-notyet .step-arrow:before {
+    width: 0;
+    height: 0;
+    border-color: transparent transparent transparent #fff;
+    border-style: solid;
+    border-width: 30.5px 0 30.5px 27px;
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: 0;
+}
+
+.step-ul .step-finish .step-arrow.one-row:before,
+.step-ul .step-notyet .step-arrow.one-row:before {
+    border-width: 22px 0 22px 27px;
+}
+
+.step-ul .step-finish .step-arrow:after,
+.step-ul .step-notyet .step-arrow:after,
+.step-ul li:last-child .step-arrow:before {
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 27.5px 0 27.5px 25px;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 2px;
+}
+
+.step-ul .step-finish .step-arrow.one-row:after,
+.step-ul .step-notyet .step-arrow.one-row:after,
+.step-ul li:last-child .step-arrow.one-row:before {
+    border-width: 19px 0 19px 25px;
+}
+
+.step-ul li:last-child .step-arrow:before {
+    right: 1px;
+}
+
+.step-finish {
+    color: #fff;
+}
+
+.step-notyet {
+    color: #777;
+}
+
+.stepmoveleft,
+.stepmoveright {
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    width: 20px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #555;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    z-index: 2;
+
+    &:before {
+        content: "";
+    }
+}
+
+.stepmoveleft {
+    border-radius: 0 15% 15% 0;
+    left: 0;
+}
+
+.stepmoveright {
+    border-radius: 15% 0 0 15%;
+    right: 0;
+}
+
+.stepmoveleft:hover,
+.stepmoveright:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: background 0.2s;
+}
+
+.step-content {
+    width: 100%;
+
+    &::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+}
+
+.content-ul,
+.content-ul>li {
+    width: 100%;
+    float: left;
+}
+
+.content-ul>li {
+    display: none;
+}

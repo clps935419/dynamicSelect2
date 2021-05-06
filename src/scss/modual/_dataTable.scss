@@ -1,0 +1,164 @@
+/*****列表格式-常態、一對多*****/
+.data_table,
+.norwd-table,
+.table-om,
+.table-two-level,
+.border-table {
+    margin-top: 5px;
+}
+
+.border-table {
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+}
+
+.data_table thead tr th,
+.norwd-table thead tr th,
+.table-om thead tr th,
+.table-two-level tr th {
+    border-bottom: 1px solid #FFF;
+}
+
+.data_table thead tr:last-child th,
+.norwd-table thead tr:last-child th,
+.table-om thead tr:last-child th,
+.table-two-level tr:last-child th {
+    border-bottom: none;
+}
+
+.data_table th,
+.norwd-table th,
+.table-om th,
+.table-two-level th {
+    border-right: 1px solid #FFF;
+    font-weight: bold;
+}
+
+.data_table th:last-child,
+.norwd-table th:last-child,
+.table-om th:last-child,
+.table-two-level th:last-child {
+    border-right: none;
+}
+
+.border-table th,
+.border-table td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+}
+
+.data_table th,
+.data_table td,
+.table-om td,
+.table-two-level td {
+    display: table-cell;
+}
+
+.data_table td:before,
+.table-om td:before,
+th.th-second-hide,
+td.td-second-hide,
+.table-two-level td:before {
+    display: none;
+}
+
+.data_table input[type="radio"],
+.data_table input[type="checkbox"],
+.norwd-table input[type="radio"],
+.norwd-table input[type="checkbox"],
+.table-om input[type="radio"],
+.table-om input[type="checkbox"],
+.lb-table input[type="radio"],
+.lb-table input[type="checkbox"],
+.batch-edit-style1 input[type="radio"],
+.batch-edit-style1 input[type="checkbox"],
+.batch-edit-style2 input[type="radio"],
+.batch-edit-style2 input[type="checkbox"],
+.batch-edit-style3 input[type="radio"],
+.batch-edit-style3 input[type="checkbox"],
+.batch-edit-style4 input[type="radio"],
+.batch-edit-style4 input[type="checkbox"],
+.batch-edit-style5 input[type="radio"],
+.batch-edit-style5 input[type="checkbox"] {
+    margin: 0;
+}
+
+//列表格式-增加光棒
+.click tr,
+.click-table,
+.click-table-om td {
+    cursor: pointer;
+}
+
+.click th {
+    cursor: default;
+}
+
+th.th-second,
+.data-table-text-left {
+    text-align: left;
+}
+
+.data-table-text-right {
+    text-align: right;
+}
+
+.fixed-table {
+    display: none;
+}
+
+//固定表格的外層
+.fixed-table-wrapper {
+    margin-top: 5px;
+    border-style: solid;
+    border-width: 1px;
+
+    //固定表頭
+    .fixed-table-header {
+        padding-right: 17px;
+
+        .data_table {
+            margin-top: 0;
+        }
+    }
+
+    //表格內容
+    .fixed-table-body {
+        overflow-y: auto;
+
+        .data_table {
+            margin-top: 0;
+        }
+    }
+}
+
+.fixed-table-pagination {
+    padding-top: 5px;
+
+    .btn {
+        margin-top: 0;
+    }
+}
+
+/* ///////////文字溢出////////////// */
+.text-overflow {
+    overflow-wrap: break-word;
+    overflow: hidden;
+    position: relative;
+
+    div {
+        text-align: left;
+        word-break: break-all;
+    }
+
+    .dot {
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        bottom: 0;
+
+        &.right {
+            text-align: right;
+        }
+    }
+}

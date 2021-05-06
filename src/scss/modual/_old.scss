@@ -1,0 +1,244 @@
+//表單名稱
+.formtitle {
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.formnote {
+    @include flexbox();
+    @include justify-content(space-between);
+    width: 100%;
+    margin-top: 5px;
+
+    &.right {
+        @include justify-content(flex-end);
+    }
+}
+
+/*****列表資料文字多行超過顯示"..."*****/
+/*方式一
+使用方式：
+<div class="dot" data-row="要顯示的行數"><div class="content">內容</div></div>
+使用時機：
+個人工作管理系統：依被交辦人數量決定事內容可顯示幾行。。
+*/
+.dot {
+    line-height: inherit;
+
+    &:before {
+        height: 100%;
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+//總和金額
+.total {
+    float: left;
+
+    .right {
+        text-align: right;
+    }
+}
+
+.total div.left,
+.total div.right {
+    width: 50%;
+    float: left;
+    padding: 5px;
+}
+
+//填表時間、表單單號、使用者IP
+.usetime,
+.filenumber,
+.useip {
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px 0;
+    text-align: right;
+}
+
+.filenumber {
+    text-align: left;
+}
+
+//檔案
+#file_detail {
+    padding: 12px 5px;
+}
+
+//展開/縮起下一個div物件
+.extend-btn2+div {
+    display: none;
+    margin-top: 5px;
+}
+
+.extend-btn3 {
+    width: 20px;
+    height: 10px;
+    display: inline-block;
+    padding: 0 5px;
+    position: relative;
+
+    &:before,
+    &:after {
+        background: #555;
+        border-radius: 3px;
+        content: "";
+        display: block;
+        position: absolute;
+        transition: all 0.2s;
+    }
+
+    &:before {
+        width: 10px;
+        height: 2px;
+        top: 5px;
+        transform: translate3D(0, -50%, 0) rotate(0);
+    }
+
+    &:after {
+        width: 2px;
+        height: 10px;
+        top: 5px;
+        left: 10px;
+        transform: translate3D(-50%, -50%, 0) rotate(0);
+    }
+}
+
+.extend-btn3.active {
+    &:before {
+        transform: translate3D(0, -50%, 0) rotate(180deg);
+    }
+
+    &:after {
+        transform: translate3D(-50%, -50%, 0) rotate(90deg);
+    }
+}
+
+//黏貼線
+.paste-line {
+    width: 100%;
+    float: left;
+    border-bottom: 1px dotted #000;
+    margin: 5px 0;
+    padding: 5px 0 10px 0;
+    text-align: center;
+}
+
+//置頂/置底按
+#top-btn {
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    line-height: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-align: center;
+    visibility: hidden;
+    z-index: z(super);
+
+    &.show {
+        visibility: visible;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: 12px;
+    }
+}
+
+#top-btn:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+//仿彈跳視窗
+.fake-dialog {
+    width: 400px;
+    float: left;
+    margin: 20px calc((100% - 360px) / 2);
+}
+
+.fake-dialog-title {
+    width: 100%;
+    float: left;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px 15px;
+    text-align: center;
+
+    .icon-check {
+        width: 16px;
+        height: 16px;
+        background: no-repeat center;
+        @include icon-img(check);
+        display: inline-block;
+        margin-right: 5px;
+    }
+}
+
+.fake-dialog-content {
+    width: 100%;
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    line-height: 15px;
+    margin-bottom: 5px;
+    padding: 20px;
+}
+
+//週期性設定
+.rd-cont {
+    width: 100%;
+    display: none;
+    margin-top: 10px;
+}
+
+.rd-cont-sec {
+    width: calc(100% - 18px);
+    margin: 10px 0 0 18px;
+}
+
+//文字對齊
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+//@extend假日顏色
+.holiday {
+    color: #ea7565;
+}
+
+//隱藏資料
+.hide,
+input[type="button"].hide,
+.switch-content {
+    display: none;
+}
+
+.switch-content-show {
+    display: table-row;
+}

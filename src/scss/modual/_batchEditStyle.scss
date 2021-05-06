@@ -1,0 +1,71 @@
+//成批編輯
+.batch-edit-style,    //此樣式由PR自行計算顯示偶數行，加入底色class。
+.batch-edit-style1,   //樣式1：第1、2行為Display，第3行開始為成批編輯。
+.batch-edit-style2,   //樣式2：第1行為Display，第2行開始為成批編輯。
+.batch-edit-style3,   //樣式3：第1行開始為成批編輯，且表頭有新增鈕，點了多出新增欄位。
+.batch-edit-style4,   //樣式4：第1行開始為成批編輯。
+.batch-edit-style5,   //樣式5：BC系統特殊用法
+.batch-edit-style6,   //樣式6：每行都為Display，且表頭有新增鈕，點了多出新增欄位。
+.batch-edit-style7 {  //樣式7：第1、2、3行為Display，第4行開始為成批編輯。
+    margin-top: 5px;
+
+    th {
+        border-right: 1px solid #FFF;
+        font-weight: bold;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    td {
+
+        &:before {
+            display: none;
+        }
+    }
+
+    th,
+    td {
+        display: table-cell;
+    }
+}
+
+.input-tr,
+.add-tr {
+    position: relative;
+
+    td {
+        position: relative;
+    }
+}
+
+.input-content {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    overflow-x: auto;
+    z-index: z(content, input_content);
+
+    .data_table {
+        border: 0;
+        margin: 0;
+    }
+}
+
+.data_table {
+    th {
+        border-right: 1px solid #FFF;
+
+        &:nth-last-child(1) {
+            border-right: none;
+        }
+    }
+}
+
+.table-om {
+    th {
+        border-right: 1px solid #FFF;
+    }
+}

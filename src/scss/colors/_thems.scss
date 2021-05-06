@@ -1,0 +1,1301 @@
+﻿$blue01: #02779e; //title?
+$blue02: #d5f1ff; //TOP底色
+$blue03: #327ccb; //HOME按鈕底色、漢堡選單SPAN底色
+$blue04: #0b486b; //HOME 按鈕HOVER、漢堡選單SPAN底色HOVER
+$blue05: #e6f7ff; //左選單底色
+$blue06: #4a98d3; //左選單LI ACTICVE底色
+$blue07: #bde9ff; //左選單HIDE子選單底色
+$blue08: #94dbf7; //左選單HIDE子選單底色 HOVER
+//////架構基本色///////
+$blue09: #0f76bd; //step-finish-bg
+$blue10: #c0e4ff; //tab
+$blue11: #b9f0fa;
+$blue12: #71c0f4;
+$blue13: #b3e7ff;
+$blue14: #71c2ff;
+$blue15: rgba(46, 144, 241, 0.7);
+$blue16: rgba(136, 196, 255, 0.8);
+$blue17: rgba(46, 144, 241, 1);
+$blue18: rgba(136, 196, 255, 1);
+$blue19: #abdef4;
+$blue20: rgba(230, 247, 255, 1);
+$blue21: rgba(230, 247, 255, .5);
+$blue22: rgba(185, 240, 250, 1);
+$blue23: rgba(185, 240, 250, .5);
+$blue24: #9CD9FF;
+
+$red01: #8d1d0c;
+$red02: #fdeae8;
+$red03: #b74e4e;
+$red04: #63211c;
+$red05: #fff4f3;
+$red06: #f7b1ad;
+$red07: #ffe0de;
+$red08: #ffc2c2;
+$red09: #af4343;
+$red10: #ffc2c2;
+$red11: #ffc2c2;
+$red12: #f7aba1;
+$red13: #ffd0cc;
+$red14: #edaba6;
+$red15: rgba(240, 45, 45, 0.7);
+$red16: rgba(247, 136, 136, 0.8);
+$red17: rgba(240, 45, 45, 1);
+$red18: rgba(247, 136, 136, 1);
+$red19: #f4c2c1;
+$red20: rgba(255, 244, 243, 1);
+$red21: rgba(255, 244, 243, .5);
+$red22: rgba(255, 194, 194, 1);
+$red23: rgba(255, 194, 194, .5);
+$red24: #FCC3C0;
+
+$green01: #3b6801;
+$green02: #e4f4cb;
+$green03: #76a328;
+$green04: #244805;
+$green05: #f0f7e7;
+$green06: #80ad40;
+$green07: #c7e2a1;
+$green08: #a8d363;
+$green09: #6d9620;
+$green10: #cef28f;
+$green11: #d0eda2;
+$green12: #b7dd80;
+$green13: #dbecc6;
+$green14: #bbdb8d;
+$green15: rgba(117, 211, 36, 0.7);
+$green16: rgba(197, 242, 64, 0.8);
+$green17: rgba(117, 211, 36, 1);
+$green18: rgba(197, 242, 64, 1);
+$green19: #bfd88d;
+$green20: rgba(240, 247, 231, 1);
+$green21: rgba(240, 247, 231, .5);
+$green22: rgba(208, 237, 162, 1);
+$green23: rgba(208, 237, 162, .5);
+$green24: #CEEAA7;
+
+$purple01: #331934;
+$purple02: #f7eef7;
+$purple03: #b360ba;
+$purple04: #663267;
+$purple05: #f4e6f4;
+$purple06: #b364b4;
+$purple07: #e3c6e5;
+$purple08: #ca96cc;
+$purple09: #a846b2;
+$purple10: #f9ccff;
+$purple11: #e0b0e0;
+$purple12: #d5a9d6;
+$purple13: #e8cae8;
+$purple14: #e2c3e5;
+$purple15: rgba(181, 111, 188, 0.7);
+$purple16: rgba(207, 176, 234, 0.8);
+$purple17: rgba(181, 111, 188, 1);
+$purple18: rgba(207, 176, 234, 1);
+$purple19: #d5aad6;
+$purple20: rgba(244, 230, 244, 1);
+$purple21: rgba(244, 230, 244, .5);
+$purple22: rgba(224, 176, 224, 1);
+$purple23: rgba(224, 176, 224, .5);
+$purple24: #E9BEEA;
+
+$orange01: #712f0f;
+$orange02: #F7EAD7;
+$orange03: #e46e34;
+$orange04: #ab4a08;
+$orange05: #fff6ee;
+$orange06: #e5925a;
+$orange07: #fcd1b4;
+$orange08: #f4b98c;
+$orange09: #712f0f;
+$orange10: #ffcdab;
+$orange11: #f2d3b6;
+$orange12: #f0af8e;
+$orange13: #ffe4cc;
+$orange14: #f4c19f;
+$orange15: rgba(240, 143, 45, 0.7);
+$orange16: rgba(245, 179, 112, 0.8);
+$orange17: rgba(240, 143, 45, 1);
+$orange18: rgba(245, 179, 112, 1);
+$orange19: #edc29f;
+$orange20: rgba(255, 246, 238, 1);
+$orange21: rgba(255, 246, 238, .5);
+$orange22: rgba(242, 211, 182, 1);
+$orange23: rgba(242, 211, 182, .5);
+$orange24: #FCDCC3;
+
+$teal01: #ecf9f9;
+$teal02: #ecf9f9;
+$teal03: #38a2a0;
+$teal04: #1f605f;
+$teal05: #e3fcfa;
+$teal06: #46afaa;
+$teal07: #b4efed;
+$teal08: #88eae1;
+$teal09: #2d918c;
+$teal10: #bfefee;
+$teal11: #88eae1;
+$teal12: #8bdad8;
+$teal13: #beede8;
+$teal14: #98e5e3;
+$teal15: rgba(32, 198, 178, 0.7);
+$teal16: rgba(112, 232, 217, 0.8);
+$teal17: rgba(32, 198, 178, 1);
+$teal18: rgba(112, 232, 217, 1);
+$teal19: #89dbd1;
+$teal20: rgba(227, 252, 250, 1);
+$teal21: rgba(227, 252, 250, .5);
+$teal22: rgba(136, 234, 225, 1);
+$teal23: rgba(136, 234, 225, .5);
+$teal24: #ACE8DF;
+
+$themes: (blue: (area-bg: $blue05,
+        border-table-tr-bdColor: $blue12,
+        batch-edit-style1-tr-bg: $blue05,
+        batch-edit-style-th-bg: $blue07,
+        batch-edit-style-bdBottomColor: $blue03,
+        batch-edit-style-bdTopColor: $blue03,
+        batch-edit-style-bdRightColor: $blue12,
+        batch-edit-style-bdLeftColor: $blue12,
+        batch-edit-style-rwd-bdTopColor: $blue03,
+        blank-tabs-li-a-bg: $blue10,
+        blank-tabs-li-a-bg-hover: $blue03,
+        change-color-btn: $blue03,
+        common-bdBottomColor: $blue03,
+        common-bdLeftColor: $blue03,
+        common-bdColor: $blue12,
+        current-bg: $blue04,
+        click-table-hover-bg: $blue11,
+        divider-bg: $blue03,
+        dialog-title-bg: $blue03,
+        dept-member-bdTopColor: $blue12,
+        dept-member-bdLeftColor: $blue12,
+        form-fake-dialog-content-bdColor: $blue03,
+        home-btn-bg: $blue03,
+        home-btn-bg-hover: $blue04,
+        hamberger-bg: $blue05,
+        hamberger-bg-span: $blue03,
+        hamberger-bg-span-hover: $blue04,
+        liclick-bg: $blue01,
+        lb-table-tr-bg: $blue05,
+        listbox-checked-bg: $blue19,
+        left-menu-bg: $blue05,
+        left-menu-rwd-bdTop: $blue12,
+        left-menu-li-active: $blue07,
+        menu-toggle-bg: $blue03,
+        menu-toggle-shadow: $blue04,
+        member-dept-member-bdRightColor: $blue12,
+        member-bdTopColor: $blue12,
+        member-bdLeftColor: $blue12,
+        mb-all-bg: $blue13,
+        mb-all-bdTopColor: $blue03,
+        step-notyet-bg: $blue05,
+        step-finish-bg: $blue09,
+        step-finish-step-arrow-after-bdLeftColor: $blue09,
+        step-notyet-step-arrow-after-bdLeftColor: $blue05,
+        search-display-member-bdTopColor: $blue03,
+        search-arrow-shadow: $blue04,
+        search-display-explanation-bdRightColor: $blue03,
+        top-title: $blue01,
+        top-bg: $blue02,
+        top-btn-bg: $blue15,
+        top-btn-bdColor: $blue16,
+        top-btn-hover-bg: $blue17,
+        top-btn-hover-bdColor: $blue18,
+        table-tr-bg: $blue05,
+        table-th-bg: $blue07,
+        table-bdLeftColor: $blue12,
+        table-bdTopColor: $blue03,
+        table-bdBottomColor: $blue03,
+        table-bdRightColor: $blue12,
+        table-tr-rwd-bdTopColor: $blue03,
+        table-rwd-bdTopColor: $blue12,
+        table-tr-rwd480-bdTopColor: $blue03,
+        th-th-second: $blue14,
+        ui-multiselect-bdBottom: $blue12,
+        preview-table-bdColor: $blue03,
+        upload-finish-bgColor: $blue12,
+        ellipsis-bg-start: $blue20,
+        ellipsis-bg-end: $blue21,
+        ellipsis-bg-hover-start: $blue22,
+        ellipsis-bg-hover-end: $blue23,
+        mb-all-sw-bg: $blue03,
+        mb-group-sw-bg: $blue12,
+        toggleTable-header-bg:$blue24,
+        toggleTable-border:$blue03,
+        select-color-border:$blue03),
+    red: (area-bg: $red05,
+        border-table-tr-bdColor: $red12,
+        batch-edit-style1-tr-bg: $red05,
+        batch-edit-style-th-bg: $red07,
+        batch-edit-style-bdBottomColor: $red03,
+        batch-edit-style-bdTopColor: $red03,
+        batch-edit-style-bdRightColor: $red12,
+        batch-edit-style-bdLeftColor: $red12,
+        batch-edit-style-rwd-bdTopColor: $red03,
+        blank-tabs-li-a-bg: $red10,
+        blank-tabs-li-a-bg-hover: $red03,
+        change-color-btn: $red03,
+        common-bdBottomColor: $red03,
+        common-bdLeftColor: $red03,
+        common-bdColor: $red12,
+        current-bg: $red04,
+        click-table-hover-bg: $red11,
+        divider-bg: $red03,
+        dialog-title-bg: $red03,
+        dept-member-bdTopColor: $red12,
+        dept-member-bdLeftColor: $red12,
+        form-fake-dialog-content-bdColor: $red03,
+        home-btn-bg: $red03,
+        home-btn-bg-hover: $red04,
+        hamberger-bg: $red05,
+        hamberger-bg-span: $red03,
+        hamberger-bg-span-hover: $red04,
+        liclick-bg: $red01,
+        lb-table-tr-bg: $red05,
+        listbox-checked-bg: $red19,
+        left-menu-bg: $red05,
+        left-menu-rwd-bdTop: $red12,
+        left-menu-li-active: $red07,
+        menu-toggle-bg: $red03,
+        menu-toggle-shadow: $red04,
+        member-dept-member-bdRightColor: $red12,
+        member-bdTopColor: $red12,
+        member-bdLeftColor: $red12,
+        mb-all-bg: $red13,
+        mb-all-bdTopColor: $red03,
+        step-notyet-bg: $red05,
+        step-finish-bg: $red09,
+        step-finish-step-arrow-after-bdLeftColor: $red09,
+        step-notyet-step-arrow-after-bdLeftColor: $red05,
+        search-display-member-bdTopColor: $red03,
+        search-arrow-shadow: $red04,
+        search-display-explanation-bdRightColor: $red03,
+        top-title: $red01,
+        top-bg: $red02,
+        top-btn-bg: $red15,
+        top-btn-bdColor: $red16,
+        top-btn-hover-bg: $red17,
+        top-btn-hover-bdColor: $red18,
+        table-tr-bg: $red05,
+        table-th-bg: $red07,
+        table-bdLeftColor: $red12,
+        table-bdTopColor: $red03,
+        table-bdBottomColor: $red03,
+        table-bdRightColor: $red12,
+        table-tr-rwd-bdTopColor: $red03,
+        table-rwd-bdTopColor: $red12,
+        table-tr-rwd480-bdTopColor: $red03,
+        th-th-second: $red14,
+        ui-multiselect-bdBottom: $red12,
+        preview-table-bdColor: $red03,
+        upload-finish-bgColor: $red12,
+        ellipsis-bg-start: $red20,
+        ellipsis-bg-end: $red21,
+        ellipsis-bg-hover-start: $red22,
+        ellipsis-bg-hover-end: $red23,
+        mb-all-sw-bg: $red03,
+        mb-group-sw-bg: $red12,
+        toggleTable-header-bg:$red24,
+        toggleTable-border:$red03,
+        select-color-border:$red03),
+    green: (area-bg: $green05,
+        border-table-tr-bdColor: $green12,
+        batch-edit-style1-tr-bg: $green05,
+        batch-edit-style-th-bg: $green07,
+        batch-edit-style-bdBottomColor: $green03,
+        batch-edit-style-bdTopColor: $green03,
+        batch-edit-style-bdRightColor: $green12,
+        batch-edit-style-bdLeftColor: $green12,
+        batch-edit-style-rwd-bdTopColor: $green03,
+        blank-tabs-li-a-bg: $green10,
+        blank-tabs-li-a-bg-hover: $green03,
+        change-color-btn: $green03,
+        common-bdBottomColor: $green03,
+        common-bdLeftColor: $green03,
+        common-bdColor: $green12,
+        current-bg: $green04,
+        click-table-hover-bg: $green11,
+        divider-bg: $green03,
+        dialog-title-bg: $green03,
+        dept-member-bdTopColor: $green12,
+        dept-member-bdLeftColor: $green12,
+        form-fake-dialog-content-bdColor: $green03,
+        home-btn-bg: $green03,
+        home-btn-bg-hover: $green04,
+        hamberger-bg: $green05,
+        hamberger-bg-span: $green03,
+        hamberger-bg-span-hover: $green04,
+        liclick-bg: $green01,
+        lb-table-tr-bg: $green05,
+        listbox-checked-bg: $green19,
+        left-menu-bg: $green05,
+        left-menu-rwd-bdTop: $green12,
+        left-menu-li-active: $green07,
+        menu-toggle-bg: $green03,
+        menu-toggle-shadow: $green04,
+        member-dept-member-bdRightColor: $green12,
+        member-bdTopColor: $green12,
+        member-bdLeftColor: $green12,
+        mb-all-bg: $green13,
+        mb-all-bdTopColor: $green03,
+        step-notyet-bg: $green05,
+        step-finish-bg: $green09,
+        step-finish-step-arrow-after-bdLeftColor: $green09,
+        step-notyet-step-arrow-after-bdLeftColor: $green05,
+        search-display-member-bdTopColor: $green03,
+        search-arrow-shadow: $green04,
+        search-display-explanation-bdRightColor: $green03,
+        top-title: $green01,
+        top-bg: $green02,
+        top-btn-bg: $green15,
+        top-btn-bdColor: $green16,
+        top-btn-hover-bg: $green17,
+        top-btn-hover-bdColor: $green18,
+        table-tr-bg: $green05,
+        table-th-bg: $green07,
+        table-bdLeftColor: $green12,
+        table-bdTopColor: $green03,
+        table-bdBottomColor: $green03,
+        table-bdRightColor: $green12,
+        table-tr-rwd-bdTopColor: $green03,
+        table-rwd-bdTopColor: $green11,
+        table-tr-rwd480-bdTopColor: $green03,
+        th-th-second: $green14,
+        ui-multiselect-bdBottom: $green12,
+        preview-table-bdColor: $green03,
+        upload-finish-bgColor: $green12,
+        ellipsis-bg-start: $green20,
+        ellipsis-bg-end: $green21,
+        ellipsis-bg-hover-start: $green22,
+        ellipsis-bg-hover-end: $green23,
+        mb-all-sw-bg: $green03,
+        mb-group-sw-bg: $green12,
+        toggleTable-header-bg:$green24,
+        toggleTable-border:$green03,
+        select-color-border:$green03),
+    orange: (area-bg: $orange05,
+        border-table-tr-bdColor: $orange12,
+        batch-edit-style1-tr-bg: $orange05,
+        batch-edit-style-th-bg: $orange07,
+        batch-edit-style-bdBottomColor: $orange03,
+        batch-edit-style-bdTopColor: $orange03,
+        batch-edit-style-bdRightColor: $orange12,
+        batch-edit-style-bdLeftColor: $orange12,
+        batch-edit-style-rwd-bdTopColor: $orange03,
+        blank-tabs-li-a-bg: $orange10,
+        blank-tabs-li-a-bg-hover: $orange03,
+        change-color-btn: $orange03,
+        common-bdBottomColor: $orange03,
+        common-bdLeftColor: $orange03,
+        common-bdColor: $orange12,
+        current-bg: $orange04,
+        click-table-hover-bg: $orange11,
+        divider-bg: $orange03,
+        dialog-title-bg: $orange03,
+        dept-member-bdTopColor: $orange12,
+        dept-member-bdLeftColor: $orange12,
+        form-fake-dialog-content-bdColor: $orange03,
+        home-btn-bg: $orange03,
+        home-btn-bg-hover: $orange04,
+        hamberger-bg: $orange05,
+        hamberger-bg-span: $orange03,
+        hamberger-bg-span-hover: $orange04,
+        liclick-bg: $orange01,
+        lb-table-tr-bg: $orange05,
+        listbox-checked-bg: $orange19,
+        left-menu-bg: $orange05,
+        left-menu-rwd-bdTop: $orange12,
+        left-menu-li-active: $orange07,
+        menu-toggle-bg: $orange03,
+        menu-toggle-shadow: $orange04,
+        member-dept-member-bdRightColor: $orange12,
+        member-bdTopColor: $orange12,
+        member-bdLeftColor: $orange12,
+        mb-all-bg: $orange13,
+        mb-all-bdTopColor: $orange03,
+        step-notyet-bg: $orange05,
+        step-finish-bg: $orange09,
+        step-finish-step-arrow-after-bdLeftColor: $orange09,
+        step-notyet-step-arrow-after-bdLeftColor: $orange05,
+        search-display-member-bdTopColor: $orange03,
+        search-arrow-shadow: $orange04,
+        search-display-explanation-bdRightColor: $orange03,
+        top-title: $orange01,
+        top-bg: $orange02,
+        top-btn-bg: $orange15,
+        top-btn-bdColor: $orange16,
+        top-btn-hover-bg: $orange17,
+        top-btn-hover-bdColor: $orange18,
+        table-tr-bg: $orange05,
+        table-th-bg: $orange07,
+        table-bdLeftColor: $orange12,
+        table-bdTopColor: $orange03,
+        table-bdBottomColor: $orange03,
+        table-bdRightColor: $orange12,
+        table-tr-rwd-bdTopColor: $orange03,
+        table-rwd-bdTopColor: $orange11,
+        table-tr-rwd480-bdTopColor: $orange03,
+        th-th-second: $orange14,
+        ui-multiselect-bdBottom: $orange12,
+        preview-table-bdColor: $orange03,
+        upload-finish-bgColor: $orange12,
+        ellipsis-bg-start: $orange20,
+        ellipsis-bg-end: $orange21,
+        ellipsis-bg-hover-start: $orange22,
+        ellipsis-bg-hover-end: $orange23,
+        mb-all-sw-bg: $orange03,
+        mb-group-sw-bg: $orange12,
+        toggleTable-header-bg:$orange24,
+        toggleTable-border:$orange03,
+        select-color-border:$orange03),
+    purple: (area-bg: $purple05,
+        border-table-tr-bdColor: $purple12,
+        batch-edit-style1-tr-bg: $purple05,
+        batch-edit-style-th-bg: $purple07,
+        batch-edit-style-bdBottomColor: $purple03,
+        batch-edit-style-bdTopColor: $purple03,
+        batch-edit-style-bdRightColor: $purple12,
+        batch-edit-style-bdLeftColor: $purple12,
+        batch-edit-style-rwd-bdTopColor: $purple03,
+        blank-tabs-li-a-bg: $purple10,
+        blank-tabs-li-a-bg-hover: $purple03,
+        change-color-btn: $purple03,
+        common-bdBottomColor: $purple03,
+        common-bdLeftColor: $purple03,
+        common-bdColor: $purple12,
+        current-bg: $purple04,
+        click-table-hover-bg: $purple11,
+        divider-bg: $purple03,
+        dialog-title-bg: $purple03,
+        dept-member-bdTopColor: $purple12,
+        dept-member-bdLeftColor: $purple12,
+        form-fake-dialog-content-bdColor: $purple03,
+        home-btn-bg: $purple03,
+        home-btn-bg-hover: $purple04,
+        hamberger-bg: $purple05,
+        hamberger-bg-span: $purple03,
+        hamberger-bg-span-hover: $purple04,
+        liclick-bg: $purple01,
+        lb-table-tr-bg: $purple05,
+        listbox-checked-bg: $purple19,
+        left-menu-bg: $purple05,
+        left-menu-rwd-bdTop: $purple12,
+        left-menu-li-active: $purple07,
+        menu-toggle-bg: $purple03,
+        menu-toggle-shadow: $purple04,
+        member-dept-member-bdRightColor: $purple12,
+        member-bdTopColor: $purple12,
+        member-bdLeftColor: $purple12,
+        mb-all-bg: $purple13,
+        mb-all-bdTopColor: $purple03,
+        step-notyet-bg: $purple05,
+        step-finish-bg: $purple09,
+        step-finish-step-arrow-after-bdLeftColor: $purple09,
+        step-notyet-step-arrow-after-bdLeftColor: $purple05,
+        search-display-member-bdTopColor: $purple03,
+        search-arrow-shadow: $purple04,
+        search-display-explanation-bdRightColor: $purple03,
+        top-title: $purple01,
+        top-bg: $purple02,
+        top-btn-bg: $purple15,
+        top-btn-bdColor: $purple16,
+        top-btn-hover-bg: $purple17,
+        top-btn-hover-bdColor: $purple18,
+        table-tr-bg: $purple05,
+        table-th-bg: $purple07,
+        table-bdLeftColor: $purple12,
+        table-bdTopColor: $purple03,
+        table-bdBottomColor: $purple03,
+        table-bdRightColor: $purple12,
+        table-tr-rwd-bdTopColor: $purple03,
+        table-rwd-bdTopColor: $purple11,
+        table-tr-rwd480-bdTopColor: $purple03,
+        th-th-second: $purple14,
+        ui-multiselect-bdBottom: $purple12,
+        preview-table-bdColor: $purple03,
+        upload-finish-bgColor: $purple12,
+        ellipsis-bg-start: $purple20,
+        ellipsis-bg-end: $purple21,
+        ellipsis-bg-hover-start: $purple22,
+        ellipsis-bg-hover-end: $purple23,
+        mb-all-sw-bg: $purple03,
+        mb-group-sw-bg: $purple12,
+        toggleTable-header-bg:$purple24,
+        toggleTable-border:$purple03,
+        select-color-border:$purple03),
+    teal: (area-bg: $teal05,
+        border-table-tr-bdColor: $teal12,
+        batch-edit-style1-tr-bg: $teal05,
+        batch-edit-style-th-bg: $teal07,
+        batch-edit-style-bdBottomColor: $teal03,
+        batch-edit-style-bdTopColor: $teal03,
+        batch-edit-style-bdRightColor: $teal12,
+        batch-edit-style-bdLeftColor: $teal12,
+        batch-edit-style-rwd-bdTopColor: $teal03,
+        blank-tabs-li-a-bg: $teal10,
+        blank-tabs-li-a-bg-hover: $teal03,
+        change-color-btn: $teal03,
+        common-bdBottomColor: $teal03,
+        common-bdLeftColor: $teal03,
+        common-bdColor: $teal12,
+        current-bg: $teal04,
+        click-table-hover-bg: $teal11,
+        divider-bg: $teal03,
+        dialog-title-bg: $teal03,
+        dept-member-bdTopColor: $teal12,
+        dept-member-bdLeftColor: $teal12,
+        form-fake-dialog-content-bdColor: $teal03,
+        home-btn-bg: $teal03,
+        home-btn-bg-hover: $teal04,
+        hamberger-bg: $teal05,
+        hamberger-bg-span: $teal03,
+        hamberger-bg-span-hover: $teal04,
+        liclick-bg: $teal01,
+        lb-table-tr-bg: $teal05,
+        listbox-checked-bg: $teal19,
+        left-menu-bg: $teal05,
+        left-menu-rwd-bdTop: $teal12,
+        left-menu-li-active: $teal07,
+        menu-toggle-bg: $teal03,
+        menu-toggle-shadow: $teal04,
+        member-dept-member-bdRightColor: $teal12,
+        member-bdTopColor: $teal12,
+        member-bdLeftColor: $teal12,
+        mb-all-bg: $teal13,
+        mb-all-bdTopColor: $teal03,
+        step-notyet-bg: $teal05,
+        step-finish-bg: $teal09,
+        step-finish-step-arrow-after-bdLeftColor: $teal09,
+        step-notyet-step-arrow-after-bdLeftColor: $teal05,
+        search-display-member-bdTopColor: $teal03,
+        search-arrow-shadow: $teal04,
+        search-display-explanation-bdRightColor: $teal03,
+        top-title: $teal01,
+        top-bg: $teal02,
+        top-btn-bg: $teal15,
+        top-btn-bdColor: $teal16,
+        top-btn-hover-bg: $teal17,
+        top-btn-hover-bdColor: $teal18,
+        table-tr-bg: $teal05,
+        table-th-bg: $teal07,
+        table-bdLeftColor: $teal12,
+        table-bdTopColor: $teal03,
+        table-bdBottomColor: $teal03,
+        table-bdRightColor: $teal12,
+        table-tr-rwd-bdTopColor: $teal03,
+        table-rwd-bdTopColor: $teal11,
+        table-tr-rwd480-bdTopColor: $teal03,
+        th-th-second: $teal14,
+        ui-multiselect-bdBottom: $teal12,
+        preview-table-bdColor: $teal03,
+        upload-finish-bgColor: $teal12,
+        ellipsis-bg-start: $teal20,
+        ellipsis-bg-end: $teal21,
+        ellipsis-bg-hover-start: $teal22,
+        ellipsis-bg-hover-end: $teal23,
+        mb-all-sw-bg: $teal03,
+        mb-group-sw-bg: $teal12,
+        toggleTable-header-bg:$teal24,
+        toggleTable-border:$teal03,
+        select-color-border:$teal03));
+
+@each $name,
+$theme in $themes {
+    .wrapper.#{$name} {
+        #top {
+            @include framework-bg-img(banner_bg_#{$name}_1);
+
+            &.project-bg {
+                @include bg-img(banner_bg_#{$name}_1);
+
+                .topbtn {
+                    background: url("../../images/pub/banner_bg_#{$name}_2.png") top left no-repeat, url("../../images/pub/banner_bg_#{$name}_3.png") top left repeat;
+                }
+            }
+
+            .topbtn {
+                background: url("../images/pub/banner_bg_#{$name}_2.png") top left no-repeat, url("../images/pub/banner_bg_#{$name}_3.png") top left repeat;
+            }
+
+            .title {
+                text-shadow: 0 0 0 5px map-get($theme, top-title), 0 4px 4px #000;
+
+                @include Chrome_Safari() {
+                    text-shadow: 2px -2px map-get($theme, top-title),
+                        -2px -2px map-get($theme, top-title),
+                        -2px -2px map-get($theme, top-title),
+                        -2px 2px map-get($theme, top-title),
+                        2px -1px map-get($theme, top-title),
+                        -2px -1px map-get($theme, top-title),
+                        -1px -2px map-get($theme, top-title),
+                        -1px 2px map-get($theme, top-title),
+                        2px 0px map-get($theme, top-title),
+                        -2px 0px map-get($theme, top-title),
+                        0px -2px map-get($theme, top-title),
+                        0px 2px map-get($theme, top-title),
+                        2px 1px map-get($theme, top-title),
+                        -2px 1px map-get($theme, top-title),
+                        1px -2px map-get($theme, top-title),
+                        1px 2px map-get($theme, top-title),
+                        2px 2px map-get($theme, top-title),
+                        -2px 2px map-get($theme, top-title),
+                        2px -2px map-get($theme, top-title),
+                        2px 2px map-get($theme, top-title), 0 4px 4px #999;
+                }
+
+                @include Opera() {
+                    color: red;
+                    text-shadow: 2px -2px map-get($theme, top-title),
+                        -2px -2px map-get($theme, top-title),
+                        -2px -2px map-get($theme, top-title),
+                        -2px 2px map-get($theme, top-title),
+                        2px -1px map-get($theme, top-title),
+                        -2px -1px map-get($theme, top-title),
+                        -1px -2px map-get($theme, top-title),
+                        -1px 2px map-get($theme, top-title),
+                        2px 0px map-get($theme, top-title),
+                        -2px 0px map-get($theme, top-title),
+                        0px -2px map-get($theme, top-title),
+                        0px 2px map-get($theme, top-title),
+                        2px 1px map-get($theme, top-title),
+                        -2px 1px map-get($theme, top-title),
+                        1px -2px map-get($theme, top-title),
+                        1px 2px map-get($theme, top-title),
+                        2px 2px map-get($theme, top-title),
+                        -2px 2px map-get($theme, top-title),
+                        2px -2px map-get($theme, top-title),
+                        2px 2px map-get($theme, top-title), 0 4px 4px #999;
+                }
+            }
+        }
+
+        .home_btn {
+            background: map-get($theme, home-btn-bg);
+
+            a {
+                color: white;
+            }
+
+            &:hover {
+                background: map-get($theme, home-btn-bg-hover);
+            }
+        }
+
+        .left-menu,
+        .condition {
+            background: map-get($theme, left-menu-bg);
+        }
+
+        .area:nth-child(odd),
+        .tr-even-bg {
+            background: map-get($theme, area-bg);
+        }
+
+        .data_table tbody>tr:nth-child(even),
+        .norwd-table tbody>tr:nth-child(even),
+        .table-om tbody>tr:nth-child(even),
+        .table-two-level>tbody>tr:nth-child(4n-1),
+        .border-table th {
+            background: map-get($theme, table-tr-bg);
+
+            .ellipsis.eps-dot:before {
+                background: linear-gradient(270deg, map-get($theme, ellipsis-bg-start)50%, map-get($theme, ellipsis-bg-end)100%);
+                background: -moz-linear-gradient(270deg, map-get($theme, ellipsis-bg-start)50%, map-get($theme, ellipsis-bg-end)100%);
+                background: -webkit-linear-gradient(270deg, map-get($theme, ellipsis-bg-start)50%, map-get($theme, ellipsis-bg-end)100%);
+                background: -o-linear-gradient(270deg, map-get($theme, ellipsis-bg-start)50%, map-get($theme, ellipsis-bg-end)100%);
+            }
+        }
+
+        .batch-edit-style tbody>tr.batch-edit-tr-bg,
+        .batch-edit-style1 tbody>tr:nth-child(2),
+        .batch-edit-style1 tbody>tr:nth-child(4n-3),
+        .batch-edit-style2 tbody>tr:nth-child(4n-2),
+        .batch-edit-style3 tbody>tr:nth-child(4n),
+        .batch-edit-style4 tbody>tr:nth-child(4n-1),
+        .batch-edit-style5 tbody>tr:nth-child(2),
+        .batch-edit-style5 .data-tr .data_table tr,
+        .batch-edit-style6 tbody>tr:nth-child(odd),
+        .batch-edit-style7 tbody>tr:nth-child(2),
+        .batch-edit-style7 tbody>tr:nth-child(4n),
+        .lb-table tbody>tr:nth-child(even) {
+            background: map-get($theme, batch-edit-style1-tr-bg);
+        }
+
+        .lb-table tbody>tr:nth-child(even),
+        .member1,
+        .mb-group1,
+        .ui-multiselect-header {
+            background: map-get($theme, lb-table-tr-bg);
+        }
+
+        .step-finish .step-arrow,
+        .step-finish,
+        .step-finish .lastarrow2 {
+            background: map-get($theme, step-finish-bg);
+        }
+
+        //lastarrowk2一定要在上面
+        .step-notyet .step-arrow,
+        .step-notyet,
+        .step-finish .lastarrow {
+            background: map-get($theme, step-notyet-bg);
+        }
+
+        .step-ul .step-finish .step-arrow:after {
+            border-left-color: map-get($theme,
+                    step-finish-step-arrow-after-bdLeftColor);
+        }
+
+        .step-ul .step-notyet .step-arrow:after {
+            border-left-color: map-get($theme,
+                    step-notyet-step-arrow-after-bdLeftColor);
+        }
+
+        .bars {
+
+            span,
+            span::before,
+            span::after {
+                background: map-get($theme, hamberger-bg-span);
+            }
+
+            &:hover {
+                border-color: map-get($theme, hamberger-bg-span-hover) transparent transparent transparent;
+
+                span,
+                span::before,
+                span::after {
+                    background: map-get($theme, hamberger-bg-span-hover);
+                }
+            }
+        }
+
+        .nav {
+            li {
+                a.active,
+                a.nav-second-current-ele,
+                a:hover {
+                    border-right-color: map-get($theme, home-btn-bg);
+                    color: map-get($theme, home-btn-bg);
+
+                    .nav-arrow-btn {
+                        &:before,
+                        &:after {
+                            background: map-get($theme, home-btn-bg);
+                        }
+                    }
+                }
+
+                a.active,
+                a.nav-second-current-ele {
+                    background: map-get($theme, left-menu-li-active);
+                }
+            }
+
+            .hide_ul li a:hover span,
+            a.nav-second-current-ele span {
+                &:before {
+                    border-color: map-get($theme, home-btn-bg);
+                }
+            }
+        }
+
+        .data_table th,
+        .norwd-table th,
+        .table-om th,
+        .table-two-level th,
+        .click th:hover,
+        .lb-table th {
+            background: map-get($theme, table-th-bg);
+        }
+
+        .batch-edit-style th,
+        .batch-edit-style1 th,
+        .batch-edit-style2 th,
+        .batch-edit-style3 th,
+        .batch-edit-style4 th,
+        .batch-edit-style5 th,
+        .batch-edit-style6 th,
+        .batch-edit-style7 th {
+            background: map-get($theme, batch-edit-style-th-bg);
+        }
+
+        #menu-toggle,
+        .search_arrow {
+            background: map-get($theme, menu-toggle-bg);
+        }
+
+        .divider,
+        .divideritems {
+            background: map-get($theme, divider-bg);
+        }
+
+        .fake-dialog-title,
+        .iframe-dialog-title,
+        .dialog-title {
+            background: map-get($theme, dialog-title-bg);
+        }
+
+        .blank,
+        .tabs li a,
+        .tabs-level2 li a:before {
+            background: map-get($theme, blank-tabs-li-a-bg);
+        }
+
+        .tabs li:hover a,
+        .tabs .active,
+        li:hover .blank,
+        .blankclick,
+        .tabs-level2 {
+            background: map-get($theme, blank-tabs-li-a-bg-hover);
+            color: #fff;
+        }
+
+        .form,
+        .fake-dialog-content {
+            border-color: map-get($theme, form-fake-dialog-content-bdColor);
+        }
+
+        .search,
+        .display,
+        .member1:nth-of-type(1) {
+            border-top: 1px solid map-get($theme, search-display-member-bdTopColor);
+        }
+
+        .search,
+        .display,
+        .explanation {
+            border-right: 1px solid map-get($theme, search-display-explanation-bdRightColor);
+        }
+
+        .data_table,
+        .norwd-table,
+        .table-om,
+        .table-two-level {
+            border-top: 1px solid map-get($theme, table-bdTopColor);
+        }
+
+        .batch-edit-style,
+        .batch-edit-style1,
+        .batch-edit-style2,
+        .batch-edit-style3,
+        .batch-edit-style4,
+        .batch-edit-style5,
+        .batch-edit-style6,
+        .batch-edit-style7 {
+            border-top: 1px solid map-get($theme, batch-edit-style-bdTopColor);
+        }
+
+        .message-style2,
+        .tabs,
+        .search,
+        .display,
+        .explanation,
+        .member,
+        .dept-member {
+            border-bottom: 1px solid map-get($theme, common-bdBottomColor);
+        }
+
+        .data_table,
+        .norwd-table,
+        .table-om,
+        .table-two-level {
+            border-bottom: 1px solid map-get($theme, table-bdBottomColor);
+        }
+
+        .batch-edit-style,
+        .batch-edit-style1,
+        .batch-edit-style2,
+        .batch-edit-style3,
+        .batch-edit-style4,
+        .batch-edit-style5,
+        .batch-edit-style6,
+        .batch-edit-style7 {
+            border-bottom: 1px solid map-get($theme, batch-edit-style-bdBottomColor);
+        }
+
+        .search,
+        .display,
+        .explanation {
+            border-left: 1px solid map-get($theme, common-bdLeftColor);
+        }
+
+        .click tr:nth-child(n):hover,
+        .click-table:hover,
+        .click-table-om:nth-child(n):hover,
+        .data_table tr.active {
+            background: map-get($theme, click-table-hover-bg);
+
+            .ellipsis.eps-dot:before {
+                background: linear-gradient(270deg, map-get($theme, ellipsis-bg-hover-start)50%, map-get($theme, ellipsis-bg-hover-end)100%);
+                background: -moz-linear-gradient(270deg, map-get($theme, ellipsis-bg-hover-start)50%, map-get($theme, ellipsis-bg-hover-end)100%);
+                background: -webkit-linear-gradient(270deg, map-get($theme, ellipsis-bg-hover-start)50%, map-get($theme, ellipsis-bg-hover-end)100%);
+                background: -o-linear-gradient(270deg, map-get($theme, ellipsis-bg-hover-start)50%, map-get($theme, ellipsis-bg-hover-end)100%);
+            }
+        }
+
+        #menu-toggle {
+            box-shadow: 2px 0 map-get($theme, click-table-hover-bg);
+        }
+
+        .current {
+            background: map-get($theme, current-bg);
+        }
+
+        .liclick {
+            background: map-get($theme, liclick-bg) !important;
+        }
+
+        .condition,
+        .search_form_table,
+        .form_table,
+        .area,
+        .sourcebox,
+        .targetbox,
+        .border-table,
+        .border-table th,
+        .border-table td {
+            border-color: map-get($theme, common-bdColor);
+        }
+
+        .member1,
+        .member2 .checkbox,
+        .member2 .blank-cb,
+        .member2-style2 .checkbox,
+        .member2-style2 .blank-cb,
+        .member2-name,
+        .blank-name {
+            border-top: 1px solid map-get($theme, member-bdTopColor);
+        }
+
+        .dept-member {
+
+            .mb-cb,
+            .blank-cb,
+            .mb-all-name,
+            .mb-group-name,
+            .mb-cont-name,
+            .blank-name,
+            .level-blank,
+            .mb-all-sw,
+            .mb-group-sw {
+                border-top: 1px solid map-get($theme, dept-member-bdTopColor);
+            }
+
+            .mb-cb,
+            .blank-cb,
+            .mb-cont-name,
+            .blank-name,
+            .level-blank,
+            .mb-all-name,
+            .mb-group-name {
+                border-left: 1px solid map-get($theme, dept-member-bdLeftColor);
+            }
+
+            .mb-all {
+                background: map-get($theme, mb-all-bg);
+
+                .mb-cb,
+                .mb-all-sw,
+                .mb-all-name {
+                    border-top: 1px solid map-get($theme, mb-all-bdTopColor);
+                }
+            }
+        }
+
+        .search_btn,
+        .data_table,
+        .norwd-table,
+        .table-om,
+        .table-two-level {
+            border-right: 1px solid map-get($theme, table-bdRightColor);
+        }
+
+        .batch-edit-style,
+        .batch-edit-style1,
+        .batch-edit-style2,
+        .batch-edit-style3,
+        .batch-edit-style4,
+        .batch-edit-style5,
+        .batch-edit-style6,
+        .batch-edit-style7 {
+            border-right: 1px solid map-get($theme, batch-edit-style-bdRightColor);
+        }
+
+        .member,
+        .dept-member {
+            border-right: 1px solid map-get($theme, member-dept-member-bdRightColor);
+        }
+
+        .search_btn,
+        .ui-multiselect-checkboxes li.ui-multiselect-optgroup-label {
+            border-bottom: 1px solid map-get($theme, ui-multiselect-bdBottom);
+        }
+
+        .search_btn,
+        .data_table,
+        .norwd-table,
+        .table-om,
+        .table-two-level {
+            border-left: 1px solid map-get($theme, table-bdLeftColor);
+        }
+
+        .batch-edit-style,
+        .batch-edit-style1,
+        .batch-edit-style2,
+        .batch-edit-style3,
+        .batch-edit-style4,
+        .batch-edit-style5,
+        .batch-edit-style6,
+        .batch-edit-style7 {
+            border-left: 1px solid map-get($theme, batch-edit-style-bdLeftColor);
+        }
+
+        .member .checkbox,
+        .member .blank-cb,
+        .member1-name,
+        .member2-name,
+        .blank-name {
+            border-left: 1px solid map-get($theme, member-bdLeftColor);
+        }
+
+        .mb-all-sw span {
+            &:after,
+            &:before {
+                background: map-get($theme, mb-all-sw-bg);
+            }
+        }
+
+        .mb-group-sw span {
+            &:after,
+            &:before {
+                background: map-get($theme, mb-group-sw-bg);
+            }
+        }
+
+        .preview .area,
+        .preview-table,
+        .preview-table thead tr:nth-child(n) th,
+        .preview-table tbody tr td {
+            border-color: map-get($theme, preview-table-bdColor);
+        }
+
+        th.th-second {
+            background: map-get($theme, th-th-second);
+        }
+
+        #top-btn {
+            background-color: map-get($theme, top-btn-bg);
+            border: 2px solid map-get($theme, top-btn-bdColor);
+        }
+
+        #top-btn i:hover,
+        #bottom-btn i:hover {
+            background: map-get($theme, top-btn-hover-bg);
+            border: 2px solid map-get($theme, top-btn-hover-bdColor);
+        }
+
+        .listbox .checked:nth-child(n) {
+            background: map-get($theme, listbox-checked-bg);
+        }
+
+        //必要留著
+        .brd-btm-white {
+            border-bottom: 1px solid white;
+        }
+
+        .display .area:nth-child(even) {
+            border-right: none;
+        }
+
+        .display .area:nth-last-child(2),
+        .display .area:last-child {
+            border-bottom: none;
+        }
+
+        .preview .area,
+        .print .area,
+        .print-table th:nth-child(n),
+        .print-table tbody>tr:nth-child(n),
+        .preview-table th:nth-child(n),
+        .preview-table tbody>tr:nth-child(n),
+        .table-one tbody>tr:nth-child(n),
+        .table-many tbody>tr:nth-child(n),
+        .click tr.switch-content:hover,
+        .batch-edit-style1>tbody>tr:nth-child(1),
+        .batch-edit-style5 .data-tr .data_table tr:nth-child(1) {
+            background: none;
+        }
+
+        .print,
+        .print .area,
+        .print-table,
+        .print-table thead tr th,
+        .print-table tbody tr td,
+        .print ~ .explanation {
+            border-color: #000;
+        }
+
+        .fullwidth .data_table,
+        .fullwidth .batch-edit-style,
+        .fullwidth .batch-edit-style1,
+        .fullwidth .batch-edit-style2,
+        .fullwidth .batch-edit-style3,
+        .fullwidth .batch-edit-style4,
+        .fullwidth .batch-edit-style5,
+        .fullwidth .batch-edit-style6,
+        .fullwidth .batch-edit-style7 {
+            border-style: solid none none none;
+        }
+
+        .search_arrow {
+            box-shadow: 0 2px 0 map-get($theme, search-arrow-shadow);
+        }
+
+        .leftmenu {
+            @include b768 {
+                border-top: 1px solid map-get($theme, left-menu-rwd-bdTop);
+            }
+        }
+
+        .border-table tr:nth-child(1) {
+            @include b768 {
+                border-color: map-get($theme, border-table-tr-bdColor);
+            }
+        }
+
+        .data_table tr:nth-child(1),
+        .table-two-level tr:nth-child(1) {
+            @include b500 {
+                border-top: 1px solid map-get($theme, table-tr-rwd-bdTopColor);
+            }
+        }
+
+        .batch-edit-style tr:nth-child(1),
+        .batch-edit-style1 tr:nth-child(1),
+        .batch-edit-style2 tr:nth-child(1),
+        .batch-edit-style3 tr:nth-child(1),
+        .batch-edit-style4 tr:nth-child(1),
+        .batch-edit-style5 tr:nth-child(1),
+        .batch-edit-style6 tr:nth-child(1),
+        .batch-edit-style7 tr:nth-child(1) {
+            @include b500 {
+                border-top: 1px solid map-get($theme, batch-edit-style-rwd-bdTopColor);
+            }
+        }
+
+        .table-two-level .switch-content .data_table tr:nth-child(1) {
+            @include b500 {
+                border-top: 1px solid map-get($theme, table-rwd-bdTopColor);
+            }
+        }
+
+        tr.switch-content td {
+            padding: 0;
+        }
+
+        tr.switch-content .data_table {
+            border-width: 0 0 1px 0;
+            margin: 0;
+
+            td {
+                padding: 5px;
+            }
+        }
+
+        .upload-finish {
+            background: map-get($theme, upload-finish-bgColor);
+        }
+
+        .toggleTable-card-header {
+            background: map-get($theme, toggleTable-header-bg);
+            border-color: map-get($theme, toggleTable-border);
+        }
+
+        .select-color-input:checked + .select-color-label {
+            border-color: map-get($theme, select-color-border);
+        }
+
+        //固定表格的外層
+        .fixed-table-wrapper {
+            border-color: map-get($theme, batch-edit-style-bdBottomColor) map-get($theme, batch-edit-style-bdRightColor);
+
+            .fixed-table-header {
+                background-color: map-get($theme, batch-edit-style-th-bg);
+
+                .data_table {
+                    border: none;
+                }
+            }
+
+            .fixed-table-body .data_table {
+                border: none;
+            }
+        }
+    }
+
+    //控制顏色按鈕
+    .wrapper #top .change-color.#{$name} {
+        background: map-get($theme, change-color-btn);
+    }
+
+    .wrapper.#{$name} #top {
+        input[type="radio"]:checked+.change-font {
+            &:after {
+                background: map-get($theme, change-color-btn);
+            }
+
+            &:before {
+                border: 2px solid map-get($theme, change-color-btn);
+            }
+        }
+    }
+
+
+    .wrapper.rwd.#{$name} {
+        @include b900 {
+            .bars {
+                background: map-get($theme, hamberger-bg);
+            }
+
+            #top {
+                @include framework-bg-img(banner_bg_#{$name}_4);
+                
+                &.project-bg {
+                    @include bg-img(banner_bg_#{$name}_4);
+
+                    .topbtn {
+                        background: url("../../images/pub/banner_bg_#{$name}_5.png") top left no-repeat, url("../../images/pub/banner_bg_#{$name}_3.png") top left repeat;
+                    }
+                }
+
+                .topbtn {
+                    background: url("../images/pub/banner_bg_#{$name}_5.png") top left no-repeat, url("../images/pub/banner_bg_#{$name}_3.png") top left repeat;
+                }
+            }
+        }
+
+        @include b540 {
+            .bars {
+                background: none;
+            }
+
+            #top {
+                @include framework-bg-img(banner_bg_#{$name}_6);
+
+                &.project-bg {
+                    @include bg-img(banner_bg_#{$name}_6);
+
+                    .topbtn {
+                        background: url("../../images/pub/banner_bg_#{$name}_7.png") top left no-repeat, url("../../images/pub/banner_bg_#{$name}_3.png") top left repeat;
+                    }
+                }
+
+                    .topbtn {
+                        background: url("../images/pub/banner_bg_#{$name}_7.png") top left no-repeat, url("../images/pub/banner_bg_#{$name}_3.png") top left repeat;
+                    }
+            }
+        }
+    }
+}

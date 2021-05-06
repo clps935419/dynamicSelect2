@@ -1,0 +1,289 @@
+//表單建置
+.form {
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+.form_table {
+    @include flexbox();
+    @include flexwrap(wrap);
+    width: 100%;
+    border-width: 1px;
+    border-style: solid none none solid;
+}
+
+.preview,
+.print {
+    border-width: 1px;
+    border-style: solid none none solid;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.preview .form_table,
+.print .form_table {
+    border: none;
+}
+
+//列印、預覽
+.print-table,
+.preview-table {
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+
+    .table-one {
+        border: none;
+
+        td {
+            border: none;
+        }
+    }
+
+    .table-many {
+        border: none;
+
+        td {
+            border-left-width: 0;
+        }
+
+        tr:last-child td {
+            border: none;
+        }
+    }
+}
+
+.fullwidth .print-table,
+.fullwidth .preview-table {
+    border-top-width: 0 !important;
+}
+
+.fullwidth .preview-table+.preview-table {
+    border-top-width: 1px;
+}
+
+.print-table thead tr:nth-child(n) th,
+.print-table td,
+.preview-table thead tr:nth-child(n) th,
+.preview-table td {
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+}
+
+.print-table th,
+.print-table td,
+.preview-table th,
+.preview-table td {
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+}
+
+.fullwidth .print-table tr:last-child td,
+.fullwidth .preview-table tr:last-child td {
+    border-bottom-width: 0;
+}
+
+.fullwidth .print-table th:first-child,
+.fullwidth .print-table td:first-child,
+.fullwidth .preview-table th:first-child,
+.fullwidth .preview-table td:first-child {
+    border-left-width: 0;
+}
+
+.print-info {
+    width: 100%;
+    float: left;
+    margin-top: 5px;
+    padding: 5px 0;
+
+    .left {
+        width: calc(100% - 130px);
+        float: left;
+        margin-top: 2px;
+    }
+
+    .right {
+        width: 130px;
+        float: right;
+        margin-top: 2px;
+    }
+}
+
+//顯示畫面資料
+.display {
+    @include flexbox();
+    @include flexwrap(wrap);
+    width: 100%;
+    margin-top: 5px;
+}
+
+//列表資料
+.area {
+    @include flexbox();
+    @include align-items(center);
+    width: calc(100% - 110px);
+    border-width: 1px;
+    border-style: none solid solid none;
+    padding: 3px;
+
+    &:nth-child(odd) {
+        @include justify-content(center);
+        width: 110px;
+    }
+
+    &:nth-child(odd)>div {
+        text-align: center;
+    }
+
+    &:nth-child(even)>div {
+        width: 100%;
+        word-wrap: break-word;
+    }
+}
+
+.fullwidth:nth-child(n) {
+    width: 100%;
+}
+
+//滿版語法的情況，要搭配hide
+.fullwidth:nth-child(2n) {
+    padding: 0;
+}
+
+.fullwidth:nth-child(2n) .data_table th {
+    font-weight: normal;
+}
+
+/**
+ * 說明CSS來顯示RWD的欄位
+* 四分割:
+ * 舉例  
+*1.
+*<div class="area col4">XX</div>
+*<div class="area col4">XX</div>
+*<div class="area col4">XX</div>
+*<div class="area col4">XX</div>
+*2.
+*<div class="area col4">XX</div>
+*<div class="area col4">XX</div>
+*<div class="area col4_l ">XX</div>
+*<div class="area col4_l ">XX</div>
+*3.
+*<div class="area col4_l ">XX</div>
+*<div class="area col4_l ">XX</div>
+*<div class="area col4 ">XX</div>
+*<div class="area col4 ">XX</div>
+* 4.
+*<div class="area col4_l ">XX</div>
+*<div class="area col4_l ">XX</div>
+*<div class="area col4_l ">XX</div>
+*<div class="area col4_l ">XX</div>
+*
+* 三分割:
+* 舉例
+*1.
+*<div class="area col3_s ">XX</div>
+*<div class="area col3_s ">XX</div>
+*<div class="area col3_l ">XX</div>
+*2.
+*<div class="area col3_l ">XX</div>
+*<div class="area col3_s ">XX</div>
+*<div class="area col3_s ">XX</div>
+*3.
+*<div class="area col3_l ">XX</div>
+*<div class="area col3_l ">XX</div>
+*<div class="area col3_l ">XX</div>
+*4.
+*<div class="area col4">XX</div>
+*<div class="area col4">XX</div>
+*<div class="area col2 ">XX</div>
+*5.
+*<div class="area col2">XX</div>
+*<div class="area col4">XX</div>
+*<div class="area col4 ">XX</div>
+*
+ *  
+ *二分割
+*舉例 
+*1.
+*<div class="area col2">XX</div>
+*<div class="area col2">XX</div>
+* 
+* 
+*/
+.col4,
+.col4_l,
+.col2_4s {
+    width: calc(25% - 110px);
+}
+
+.col3_s,
+.col3_l,
+.col2_3s {
+    width: calc(33.33333% - 110px);
+}
+
+.col2 {
+    width: calc(50% - 110px);
+}
+
+.col2_4l {
+    width: calc(75% - 110px);
+}
+
+.col2_3l {
+    width: calc(66.666666% - 110px);
+}
+
+@include edge {
+    .col4,
+.col4_l,
+.col2_4s {
+    width: calc(25% - 110.01px);
+}
+
+.col3_s,
+.col3_l,
+.col2_3s {
+    width: calc(33.33333% - 110.01px);
+}
+
+.col2 {
+    width: calc(50% - 110.01px);
+}
+
+.col2_4l {
+    width: calc(75% - 110.01px);
+}
+
+.col2_3l {
+    width: calc(66.666666% - 110.01px);
+}
+}
+
+//area內的div資料寬度
+.area:nth-child(even) {
+
+    .cb-type-area-col4,
+    .cb-type-area-col2,
+    .cb-type-area-col1 {
+        width: 25%;
+        float: left;
+        margin: 2.5px 0;
+    }
+
+    .cb-type-area-col2 {
+        width: 50%;
+    }
+
+    .cb-type-area-col1 {
+        width: 100%;
+    }
+}
+
+.area-level2 {
+    width: calc(100% - 16px);
+    margin: 0 0 5px 16px;
+}

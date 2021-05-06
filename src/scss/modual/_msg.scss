@@ -1,0 +1,307 @@
+//舊訊息樣式
+.msg {
+    width: 100%;
+    color: #f00;
+    margin: 10px 0 5px 0;
+    padding: 5px;
+    text-align: center;
+}
+
+.top-msg {
+    width: 100%;
+    color: #f00;
+    margin-top: 5px;
+    text-align: left;
+}
+
+//新訊息樣式-固定最上方
+.new-top-msg,
+.dialog-top-msg {
+    width: 100%;
+    margin-bottom: 5px;
+
+    ul {
+        width: 100%;
+        position: relative;
+
+        li {
+            @include flexbox();
+            @include align-items(flex-start);
+            width: 100%;
+            box-shadow: 0 2px 1px rgba(0, 0, 0, .2);
+            border-radius: 3px;
+            margin-top: 2px;
+            padding: 5px 13px 5px 7px;
+            position: relative;
+
+            &.del {
+
+                &:nth-child(n) {
+                    display: none;
+                    z-index: 0;
+                }
+
+                span {
+                    display: inline-block;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+
+            span {
+                width: calc(100% - 60px);
+                margin-right: 5px;
+                text-align: left;
+            }
+
+            &.top-msg-error,
+            &.top-msg-warning {
+                background-color: #FFF3F3;
+
+                span {
+                    color: #D8000C;
+                }
+            }
+
+            &.top-msg-success {
+                background-color: #FAFFF0;
+
+                span {
+                    color: #270;
+                }
+            }
+
+            &.top-msg-remind {
+                background-color: #FFF9E9;
+
+                span {
+                    color: #BA7911;
+                }
+            }
+
+            i {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                margin-right: 5px;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                }
+            }
+
+        }
+    }
+
+    &.close ul li {
+
+        &:nth-child(n+4) {
+            display: none;
+            z-index: 0;
+        }
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+            @include flexbox();
+            z-index: 5;
+        }
+
+        &:nth-child(2) {
+            position: absolute;
+            top: 2px;
+            z-index: 4;
+        }
+
+        &:nth-child(3) {
+            position: absolute;
+            top: 6px;
+            z-index: 3;
+        }
+
+        span {
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    &.show ul li.del {
+
+        &#del_1,
+        &#del_2,
+        &#del_3 {
+            @include flexbox();
+            z-index: 5;
+        }
+
+        &#del_2 {
+            position: absolute;
+            top: 2px;
+            z-index: 4;
+        }
+
+        &#del_3 {
+            position: absolute;
+            top: 6px;
+            z-index: 3;
+        }
+    }
+}
+
+.new-top-msg {
+    margin-top: 5px;
+
+    + .toolbar {
+        margin-top: 10px;
+    }
+
+    + .data_table {
+        margin-top: 8px;
+    }
+
+    &.close,
+    &.show {
+        + .toolbar,
+        + .data_table {
+        margin-top: 15px;
+        }
+    }
+}
+
+.dialog-top-msg {
+    &.show,
+    &.close {
+        margin-bottom: 13px;
+    }
+}
+
+.error-show-btn {
+    position: absolute;
+    right: 6px;
+    text-decoration: none;
+    z-index: 10;
+
+    .icon-down_circle,
+    .icon-up_circle {
+
+        &.hide {
+            display: none;
+        }
+    }
+}
+
+.error-hide-btn {
+    cursor: pointer;
+    margin-right: 15px;
+    position: relative;
+
+    &.hide {
+        display: none;
+    }
+}
+
+//彈跳視窗訊息
+.msg-icon-error,
+.msg-icon-warning,
+.msg-icon-remind,
+.msg-icon-query,
+.msg-icon-success {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px -5px 20px rgba(0,0,0,0.05);
+    border-radius: 50%;
+    margin-left: -30px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+
+    &:after {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        z-index: 0;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+.msg-content {
+    width: 100%;
+    float: left;
+    margin-bottom: 5px;
+    padding: 50px 20px 20px 20px;
+    word-break: break-all;
+}
+
+//備註文字
+.lefttextred {
+    width: 100%;
+    color: #f00;
+    margin-top: 5px;
+    padding: 5px 0;
+}
+
+.lefttextblue {
+    width: 100%;
+    color: #00f;
+    margin-top: 5px;
+    padding: 5px 0;
+}
+
+.lefttextblack {
+    width: 100%;
+    color: #000;
+    margin-top: 5px;
+    padding: 5px 0;
+}
+
+.right-text-black {
+    width: 100%;
+    color: #000;
+    margin-top: 5px;
+    padding: 5px 0;
+    text-align: right;
+}
+
+.center-text-black {
+    width: 100%;
+    color: #000;
+    margin-top: 5px;
+    padding: 5px 0;
+    text-align: center;
+}
+
+//錯誤
+.error-text {
+    color: red;
+}
+
+.error-line {
+    border: 1px solid red;
+}
+
+//處理結果或錯誤訊息
+.results {
+    width: 100%;
+    float: left;
+    color: #f00;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: left;
+}

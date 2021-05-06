@@ -1,0 +1,588 @@
+.wrapper.rwd {
+    @include b900 {
+        #toggle-btn {
+            &:checked~#top {
+                height: 80px;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &:checked~.content {
+                padding-top: 110px;
+            }
+
+            &:checked~.system_bg .bars {
+                top: 70px;
+
+                i {
+                    display: none;
+                }
+            }
+
+            &:checked~.left-menu {
+                width: 100%;
+                height: auto;
+                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+                display: none;
+                opacity: 1;
+                top: 110px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                visibility: visible;
+                z-index: z(modal, rwd_left-menu);
+            }
+
+            &:checked~.left-menu.block {
+                display: block;
+            }
+
+            &:checked~.system_bg {
+                top: 70px;
+                left: 0;
+            }
+
+            ~ .fixed-area ~ .content {
+                padding-top: 0px;
+            }
+        }
+
+        //只有rightmain
+        #toggle-btn[condition="browser-style2"] {
+            ~.fixed-area {
+                margin-top: 0;
+            }
+        }
+
+        .home_btn {
+            width: 100%;
+            display: block;
+            position: static;
+
+            a {
+                height: 35px;
+            }
+        }
+
+        .content {
+            padding-left: 0;
+        }
+
+        //左邊選單
+        .left-menu {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+            display: none;
+            padding: 0;
+            z-index: z(modal, rwd_left-menu);
+
+            &.full {
+                top: 40px;
+            }
+
+            .nav {
+                width: 100%;
+                padding-top: 0;
+
+                >li>a span {
+                    flex-basis: auto;
+                    max-width: calc(100% - 30px);
+                }
+
+                .hide_ul {
+                    width: 100%;
+
+                    >li>a span {
+                        flex-basis: auto;
+                        max-width: calc(100% - 30px);
+                    }
+                }
+            }
+        }
+
+        //header
+        #top {
+            top: 0;
+
+            .toplogo {
+                width: 160px;
+
+                .logo {
+                    display: none;
+                }
+
+                .mini-logo {
+                    display: block;
+                }
+            }
+
+            .topinfor {
+                width: calc(100% - 160px);
+            }
+        }
+
+        .system_bg {
+            width: 100%;
+            position: fixed;
+            top: 70px;
+            right: 0;
+            left: 0;
+            z-index: z(modal, rwd_system_bg);
+
+            //RWD時為了固定漢堡選單
+            .system_name {
+                .name_ch {
+                    margin-left: 10px;
+                }
+            }
+
+            //漢堡選單
+            .bars {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                margin: 0;
+
+                .icon-minsize {
+                    background-image: none;
+                    display: none;
+                }
+
+                .arrow {
+                    display: flex;
+                }
+
+                span {
+                    width: 20px;
+                    height: 2.75px;
+                    display: block;
+                    position: relative;
+
+                    &:before,
+                    &:after {
+                        width: 20px;
+                        height: 2.7px;
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                    }
+
+                    &:before {
+                        top: 6px;
+                    }
+
+                    &:after {
+                        top: -6px;
+                    }
+                }
+            }
+        }
+
+        .system_bg.full {
+            top: 0;
+        }
+
+        .filter-sw {
+            line-height: 28px;
+            margin: 5px;
+        }
+
+        .filter-sw:before {
+            top: 12px;
+        }
+
+        input[type="button"].search-btn {
+            height: 40px;
+        }
+
+        .fixed-area {
+            position: static;
+            margin-top: 120px;
+            padding: 0 10px;
+
+            ~.content {
+                padding-top: 0;
+            }
+
+            .new-top-msg.close {
+                margin-bottom: 10px;
+            }
+        }
+
+        .system_fixed_fake_height_ele {
+            display: none;
+        }
+    }
+
+    @include b1024 {
+
+        .col3_s,
+        .col4 {
+            width: calc(50% - 110px);
+        }
+
+        .col2,
+        .col3_l,
+        .col4_l,
+        .col2_4s,
+        .col2_4l {
+            width: calc(100% - 110px);
+        }
+
+        @include edge {
+
+            .col3_s,
+            .col4 {
+                width: calc(50% - 110.01px);
+            }
+        }
+
+        .member2-name,
+        .mb-cont-name,
+        .blank-name {
+            width: calc(50% - 30px);
+
+            //Edge 12+
+            @supports (-ms-ime-align: auto) {
+                width: calc(50% - 30.05px);
+            }
+        }
+
+        .iframe-dialog,
+        .dialog {
+            width: 70%;
+        }
+
+        //圖片列表
+        .file-img-table li {
+            width: calc(25% - 5px);
+        }
+
+        .divideritems {
+            line-height: 40px;
+        }
+    }
+
+    @include b768 {
+
+        .usetime,
+        .filenumber,
+        .useip {
+            text-align: left;
+        }
+
+        .col4,
+        .col3_s,
+        .col2_3s,
+        .col2_3l {
+            width: calc(100% - 110px);
+        }
+
+        /*****下拉多選功能欄位寬度*****/
+        .ui-multiselect-checkboxes li {
+            width: 50%;
+        }
+
+        /*****菜籃式挑選*****/
+        .listbox {
+            flex-direction: column;
+        }
+
+        .class_select2 {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .sourcebox,
+        .targetbox-area,
+        .targetbox,
+        .put-btn-area,
+        .move-btn {
+            width: 100%;
+            float: left;
+            display: block;
+        }
+
+        .targetbox {
+            margin-bottom: 10px;
+        }
+
+        .put-btn {
+            width: 10%;
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .move-btn {
+            margin-top: 10px;
+        }
+
+        .put-btn i {
+            -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        .move-btn i {
+            float: none;
+            margin: 10px;
+        }
+
+        .iframe-dialog,
+        .dialog {
+            width: 85%;
+        }
+
+        .filter-area li ul li {
+            width: calc(50% - 10px);
+
+            &.col2-style2 {
+                width: calc(100% - 10px);
+            }
+
+            &.col5-style2 {
+                width: calc(50% - 10px);
+            }
+        }
+
+        .area:nth-child(even) {
+            .cb-type-area-col4 {
+                width: 50%;
+            }
+
+            .cb-type-area-col2 {
+                width: 100%;
+            }
+        }
+
+        .mb-all-sw,
+        .mb-group-sw {
+            left: auto;
+            right: 15px;
+        }
+
+        .mb-all-name,
+        .mb-group-name {
+            padding-right: 35px;
+        }
+    }
+
+    @include b540 {
+        .system_bg .bars {
+            box-shadow: none;
+        }
+
+        #top {
+            .toplogo {
+                width: 55px;
+
+                .mini-logo {
+                    display: none;
+                }
+            }
+
+            .topinfor {
+                width: calc(100% - 55px);
+            }
+        }
+    }
+
+    @include b500 {
+        table {
+            text-align: left;
+        }
+
+        .calendar table,
+        .norwd-table {
+            text-align: center;
+        }
+
+        .data_table th,
+        .table-om th,
+        .table-two-level th,
+        td.td-first-hide,
+        td.td-first-hide:before,
+        th.th-first-hide,
+        .batch-edit-style1 th,
+        .batch-edit-style2 th,
+        .batch-edit-style3 th,
+        .batch-edit-style4 th,
+        .batch-edit-style5 th {
+            display: none;
+        }
+
+        td.td-second-hide {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .data_table td,
+        .table-two-level td,
+        .batch-edit-style1 td,
+        .batch-edit-style2 td,
+        .batch-edit-style3 td,
+        .batch-edit-style4 td,
+        .batch-edit-style5 td {
+            width: 100%;
+            float: left;
+            padding: 5px 5px 5px 100px;
+        }
+
+        .data_table td:before,
+        td.td-second-hide:before,
+        .table-two-level td:before,
+        .batch-edit-style1 td:before,
+        .batch-edit-style2 td:before,
+        .batch-edit-style3 td:before,
+        .batch-edit-style4 td:before,
+        .batch-edit-style5 td:before {
+            width: 90px;
+            float: left;
+            color: #666;
+            content: attr(data-title);
+            display: block;
+            margin-left: -95px;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        .table-om td {
+            width: 100%;
+            float: left;
+        }
+
+        .table-one td {
+            width: 100%;
+            float: left;
+            padding: 5px 5px 5px 100px;
+        }
+
+        .table-one td:before {
+            width: 90px;
+            float: left;
+            color: #666;
+            content: attr(data-title);
+            display: block;
+            margin-left: -95px;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        .data_table .allcheck {
+            width: 100%;
+            border: none;
+            display: block;
+            position: relative;
+            padding-left: 100px;
+            text-align: left;
+        }
+
+        .data_table .allcheck:before {
+            width: 90px;
+            float: left;
+            color: #666;
+            content: '全　　選：';
+            display: block;
+            margin-left: -95px;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        .data-table-text-right {
+            text-align: left;
+        }
+
+        /****成批編輯*****/
+        .input-tr td,
+        .input-tr td:before,
+        .add-tr td,
+        .add-tr td:before {
+            padding: 0;
+        }
+
+        .input-content .data_table td {
+            width: 100%;
+            float: left;
+            padding: 5px 5px 5px 100px;
+        }
+
+        .input-content .data_table td:before {
+            width: 90px;
+            float: left;
+            color: #666;
+            content: attr(data-title);
+            display: block;
+            margin-left: -95px;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        /****隱藏/顯示第二層表格*****/
+        tr.switch-content .data_table td {
+            width: 100%;
+            float: left;
+            padding: 5px 5px 5px 100px;
+        }
+
+        tr.switch-content .data_table td:before {
+            width: 90px;
+            float: left;
+            color: #666;
+            content: attr(data-title);
+            display: block;
+            margin-left: -95px;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        .member2-name,
+        .mb-cont-name,
+        .blank-name {
+            width: calc(100% - 30px);
+
+            //Edge 12+
+            @supports (-ms-ime-align: auto) {
+                width: calc(100% - 30.05px);
+            }
+        }
+
+        /*****下拉多選功能欄位寬度*****/
+        .ui-multiselect {
+            width: 100%;
+        }
+
+        .ui-multiselect-checkboxes li {
+            width: 100%;
+        }
+
+        .fake-dialog {
+            width: calc(100% - 40px);
+            float: left;
+            margin: 20px;
+        }
+
+        .iframe-dialog,
+        .dialog {
+            width: 100%;
+        }
+
+        .filter-area li ul li {
+            width: calc(100% - 10px);
+
+            &.col5-style2 {
+                width: calc(100% - 10px);
+            }
+        }
+
+        .area:nth-child(even) .cb-type-area-col4 {
+            width: 100%;
+        }
+
+        //圖片列表
+        .file-img-table li {
+            width: calc(50% - 5px);
+        }
+    }
+}

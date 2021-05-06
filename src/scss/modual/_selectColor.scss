@@ -1,0 +1,23 @@
+.select-color-input {
+    display: none;
+
+    &:checked + .select-color-label {
+        border-width: 2px;
+        box-shadow: inset 0px 0px 0px 2px #FFF;
+    }
+}
+
+
+.select-color-label {
+    width: 26px;
+    height: 26px;
+    border-color: rgba(0,0,0,.1);
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px 4px 4px 2px;
+    position: relative;
+    vertical-align: middle;
+}

@@ -1,0 +1,71 @@
+$btn-blue: #b6d0ef; //input樣式
+$btn-blue1: #deeaf9; //input樣式
+$btn-flax: #dcd0b6;
+$btn-flax1: #efe8da;
+$btn-orange: #fbc096;
+$btn-orange1: #ffe7d7;
+$btn-pink: #fcd6d2;
+$btn-pink1: #f9e6e4;
+$btn-teal: #d7f9ef;
+$btn-teal1: #f3fffc;
+$btn-yellow: #ffe384;
+$btn-yellow1: #fff1ca;
+
+$btn-themes: (BlueBtn: (normal: $btn-blue,
+        disalbled: $btn-blue,
+        hover: $btn-blue1),
+    FlaxBtn: (normal: $btn-flax,
+        disalbled: $btn-flax,
+        hover: $btn-flax1),
+    OrangeBtn: (normal: $btn-orange,
+        disalbled: $btn-orange,
+        hover: $btn-orange1),
+    PinkBtn: (normal: $btn-pink,
+        disalbled: $btn-pink,
+        hover: $btn-pink1),
+    TealBtn: (normal: $btn-teal,
+        disalbled: $btn-teal,
+        hover: $btn-teal1),
+    YellowBtn: (normal: $btn-yellow,
+        disalbled: $btn-yellow,
+        hover: $btn-yellow1));
+
+@each $btnName,
+$btn-theme in $btn-themes {
+    .wrapper.#{$btnName} {
+
+        input[type="button"],
+        input[type="submit"],
+        input[type="reset"],
+        button,
+        .file-button {
+            background-color: map-get($btn-theme, normal);
+        }
+
+        input[type="button"]:disabled,
+        input[type="submit"]:disabled,
+        input[type="reset"]:disabled,
+        button:disabled,
+        .file-button:disabled,
+        input[type="button"]:hover:disabled,
+        input[type="submit"]:hover:disabled,
+        input[type="reset"]:hover:disabled,
+        button:hover:disabled,
+        .file-button:hover:disabled {
+            background-color: map-get($btn-theme, disalbled);
+        }
+
+        input[type="button"]:hover,
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        button:hover,
+        .file-button:hover {
+            background-color: map-get($btn-theme, hover);
+        }
+
+        button.calendar_icon,
+        button.calendar_icon:hover {
+            background-color: transparent;
+        }
+    }
+}

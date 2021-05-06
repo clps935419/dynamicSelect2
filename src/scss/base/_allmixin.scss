@@ -1,0 +1,154 @@
+//寫在各支css檔的svg圖鈕
+@mixin system-icon-img($img) {
+    background-image: url("./svg(UTF8)/#{$img}.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display:inline-block;
+}
+
+//寫在共用css檔的svg圖鈕
+@mixin icon-img($img) {
+    background-image: url("./svg(UTF8)/#{$img}.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display:inline-block;
+}
+@mixin object-img($img) {
+    background-image: url("./svg(UTF8)/#{$img}.svg");
+    background-repeat: no-repeat;
+}
+
+//寫在各支css檔的svg共用圖鈕
+@mixin share-icon-img($img) {
+    background-image: url("../framework/css/svg(UTF8)/#{$img}.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display:inline-block;
+}
+
+@mixin framework-bg-img($img) {
+    background-image: url("../images/pub/#{$img}.png");
+}
+
+@mixin bg-img($img) {
+    background-image: url("../../images/pub/#{$img}.png");
+}
+
+@mixin cus-bg-img($img) {
+    background-image: url("../images/pub/#{$img}.png");
+}
+
+//客戶的麻煩使用這個
+@mixin transition-transform($time, $ease, $more) {
+    -webkit-transition: -webkit-transform $time $ease, $more;
+    -moz-transition: -moz-transform $time $ease, $more;
+    -ie-transition: -ie-transform $time $ease, $more;
+    -o-transition: -o-transform $time $ease, $more;
+    transition: transform $time $ease, $more;
+}
+
+//旋轉
+@mixin rotate($rotate) {
+    -webkit-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
+
+
+@mixin traslateY($translate) {
+    -webkit-transform: translateY($translate);
+    transform: translateY($translate);
+}
+
+//動畫
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+//動畫名稱
+@mixin transition-property($property...) {
+    -moz-transition-property: $property;
+    -o-transition-property: $property;
+    -webkit-transition-property: $property;
+    transition-property: $property;
+}
+
+//動畫執行時間
+@mixin transition-duration($duration...) {
+    -moz-transition-duration: $duration;
+    -o-transition-duration: $duration;
+    -webkit-transition-duration: $duration;
+    transition-duration: $duration;
+}
+
+//
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function: $timing;
+    -o-transition-timing-function: $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function: $timing;
+}
+
+//動畫延遲時間
+@mixin transition-delay($delay...) {
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+//彈性盒子
+@mixin flexbox() {
+    display: -webkit-box; // OLD - iOS 6-, Safari 3.1-6
+    display: -moz-box; //OLD - Firefox 19- (buggy but mostly works)
+    display: -ms-flexbox; //TWEENER - IE 10
+    display: -webkit-flex; // NEW - Chrome
+    display: flex; // NEW, Spec - Opera 12.1, Firefox 20+
+}
+
+//在父元素宣告，子元素會水平置中
+@mixin justify-content($justify) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+    -ms-flex-pack: $justify;
+    -webkit-box-pack: $justify;
+    -moz-box-pack: $justify;
+}
+
+//在父元素宣告，子元素會換行
+@mixin flexwrap($flexwrap) {
+    -webkit-flex-wrap: $flexwrap;
+    -moz-flex-wrap: $flexwrap;
+    -ms-flex-wrap: $flexwrap;
+    -o-flex-wrap: $flexwrap;
+    flex-wrap: $flexwrap;
+}
+
+//在父元素宣告，子元素會垂直置中
+@mixin align-items($align) {
+    -webkit-box-align: $align;
+    -moz-box-align: $align;
+    -ms-flex-align: $align;
+    -webkit-align-items: $align;
+    -moz-align-items: $align;
+    -ms-align-items: $align;
+    align-items: $align;
+}
+
+//防止網頁反白
+@mixin disabled-select() {
+    -webkit-touch-callout: none;/* iOS Safari */
+    -webkit-user-select: none;/* Safari */
+    -khtml-user-select: none;/* Konqueror HTML */
+    -moz-user-select: none;/* Firefox */
+    -ms-user-select: none;/* Internet Explorer/Edge */
+    user-select: none;/* Non-prefixed version, currently supported by Chrome and Opera */
+}

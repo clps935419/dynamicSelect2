@@ -1,0 +1,154 @@
+//漢堡選單跟home按鈕容器
+.bars-container {
+    @include flexbox();
+    width: 100%;
+}
+
+//home-btn 元件
+.home_btn {
+    width: 150px;
+    opacity: 1;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    visibility: unset;
+    z-index: z(modal, home_btn); //為了蓋掉scrollbar
+
+    a {
+        width: 100%;
+        height: 40px;
+        display: block;
+        letter-spacing: 1px;
+        line-height: 40px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    span {
+        padding-left: 6px;
+        vertical-align: middle;
+    }
+
+    .icon-return3 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+//無header版本
+.container.full {
+    top: 0;
+}
+
+//左邊選單
+.left-menu {
+    width: 150px;
+    height: auto;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; //這段加入JQ插件可以不用下
+    overflow-x: hidden;
+    padding-top: 110px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: z(left-menu);
+
+    .nav {
+        width: 150px;
+        height: auto;
+        display: block;
+        opacity: 1;
+
+        li,
+        a,
+        ul {
+            width: 100%;
+        }
+
+        a {
+            @include flexbox();
+            @include align-items(center);
+            width: 100%;
+            border-right: 2px solid transparent;
+            color: #000;
+            padding: 10px 5px 10px 8px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        span {
+            width: calc(100% - 18px);
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        .nav-arrow-btn {
+            width: 10px;
+            height: 1em;
+            position: relative;
+
+            &:before,
+            &:after {
+                width: 6px;
+                height: 1.5px;
+                background: #777;
+                content: "";
+                position: absolute;
+            }
+
+            &:before {
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+            }
+
+            &.active {
+
+                &:before {
+                    right: 8px;
+                }
+            }
+        }
+
+        >li {
+            >a {
+                @include justify-content(space-between);
+            }
+
+            //裡層UL
+            .hide_ul {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+
+                >li {
+
+                    >a {
+                        padding: 8px 12px 8px 22px;
+
+                        span {
+                            width: 100%;
+                            position: relative;
+
+                            &:before {
+                                width: 5px;
+                                height: 5px;
+                                border: 0.5px solid #777;
+                                border-radius: 50%;
+                                content: "";
+                                position: absolute;
+                                left: -11px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

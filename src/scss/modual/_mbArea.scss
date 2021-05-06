@@ -1,0 +1,495 @@
+//選擇人員、單位
+.mb-area {
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    width: 100%;
+    margin-top: 5px;
+}
+
+.mb-selected-num,
+.mb-slted-num {
+    display: inline-block;
+    vertical-align: -2px;
+    margin-right: 5px;
+}
+
+.mb-selected,
+.mb-slted {
+    @include flexwrap(wrap);
+    width: 100%;
+    margin-top: 5px;
+}
+
+.mb-selected {
+    @include flexbox();
+
+    &.active {
+        display: none;
+    }
+}
+
+.mb-slted {
+    display: none;
+
+    &.active {
+        @include flexbox();
+    }
+}
+
+.mb-selected-member1,
+.mb-selected-member2,
+.mb-slted-group1,
+.mb-slted-cont1 {
+    @include align-items(flex-start);
+    display: none;
+
+    &.show {
+        @include flexbox();
+    }
+}
+
+.mb-selected-member1,
+.mb-slted-group1 {
+    position: relative;
+    display: none;
+
+    //直線
+    &:before {
+        width: 1px;
+        border-color: #545454;
+        border-style: dotted;
+        border-width: 0 0 0 1px;
+        content: "";
+        display: block;
+        position: absolute;
+        top: -1.5em;
+        bottom: 1.6em;
+        left: 7.5px;
+    }
+
+    //橫線
+    &:after {
+        width: 15px;
+        border-color: #545454;
+        border-style: dotted;
+        border-width: 1px 0 0 0;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 9px;
+    }
+}
+
+.mb-selected-member1-first:before,
+.mb-slted-group1-first:before {
+    top: -0.5em;
+}
+
+.mb-selected-member1-last:before,
+.mb-slted-group1-last:before {
+    height: 3.1em;
+}
+
+.mb-selected-member1-one:before,
+.mb-slted-group1-one:before {
+    top: -0.5em;
+    height: 2.1em;
+}
+
+.mb-selected-member2 {
+    &>div {
+        @include flexbox();
+        @include flexwrap(wrap);
+    }
+}
+
+.mb-selected-data,
+.mb-slted-cont1 li {
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    cursor: default;
+    display: none;
+    margin: 2px;
+    padding: 4px 30px 4px 8px;
+    position: relative;
+    vertical-align: middle;
+
+    @include Chrome_Safari {
+        padding: 5px 30px 3px 8px;
+    }
+
+    &.show {
+        display: inline-block;
+    }
+
+    span {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 0;
+
+        &:before,
+        &:after {
+            height: 1.5px;
+            background: #555;
+            content: "";
+            display: block;
+            position: absolute;
+            margin-top:-1px;
+            top: 50%;
+            right: 5px;
+
+        }
+
+        &:hover {
+
+            &:before,
+            &:after {
+                background: #000;
+            }
+        }
+
+        &:before {
+            @include rotate(45deg);
+        }
+
+        &:after {
+            @include rotate(-45deg);
+        }
+    }
+}
+
+.mb-slted-cont1 {
+    ul {
+        width: 100%;
+    }
+}
+
+//OLD
+.member {
+    width: 100%;
+    margin-top: 5px;
+
+    .checkbox,
+    .blank-cb {
+        width: 30px;
+        display: table-cell;
+        padding: 5px;
+        text-align: center;
+        vertical-align: middle;
+    }
+}
+
+.member1 {
+    width: 100%;
+    display: table;
+}
+
+.member2,
+.member2-style2 {
+    @include flexbox();
+    @include flexwrap(wrap);
+    width: 100%;
+}
+
+.member2-style2 {
+    display: none;
+}
+
+.member2-style2.mb2-show {
+    @include flexbox();
+}
+
+.member1-name,
+.member1-name-style2 {
+    width: calc(100% - 30px);
+    display: table-cell;
+    line-height: 1.2;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.member1-name {
+    cursor: pointer;
+}
+
+.no-cb {
+    .member1-name {
+        width: 100%;
+        cursor: default;
+        text-align: center;
+    }
+}
+
+.member1-name-style2 {
+    width: calc(100% - 60px);
+}
+
+.member .mb-switch,
+.member .mb-switch-all,
+.mb-selected-switch {
+    width: 30px;
+    cursor: pointer;
+    display: table-cell;
+    padding: 5px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.mb-selected-switch {
+    width: auto;
+    display: inline-block;
+    padding: 0 5px 0 0;
+}
+
+.member .mb-switch:before,
+.member .mb-switch-all:before,
+.mb-selected-switch:before {
+    width: 15px;
+    height: 15px;
+    float: left;
+    border: 1px solid #666;
+    border-radius: 3px;
+    content: "";
+}
+
+.member .mb-switch span,
+.member .mb-switch-all span,
+.mb-selected-switch span {
+    display: block;
+    position: relative;
+    top: 7.5px;
+    left: 4px;
+}
+
+.member .mb-switch span:before,
+.member .mb-switch span:after,
+.member .mb-switch-all span:before,
+.member .mb-switch-all span:after,
+.mb-selected-switch span:before,
+.mb-selected-switch span:after {
+    width: 9px;
+    height: 2px;
+    background: #666;
+    border-radius: 3px;
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.member .mb-switch span:after,
+.member .mb-switch-all span:after,
+.mb-selected-switch span:after {
+    @include rotate(90deg);
+    @include transition-duration(0.2s);
+}
+
+.member .mb-switch.active span:after,
+.member .mb-switch-all.active span:after,
+.mb-selected-switch.active span:after {
+    @include rotate(0deg);
+}
+
+.member2 .checkbox,
+.member2 .blank-cb,
+.member2-style2 .checkbox,
+.member2-style2 .blank-cb {
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+}
+
+.member2-name,
+.blank-name {
+    @include flexbox();
+    @include align-items(center);
+    width: calc(25% - 30px);
+    line-height: 20px;
+    padding: 5px;
+
+    @include edge() {
+        width: calc(25% - 30.05px);
+    }
+}
+
+//NEW
+.dept-member {
+    @include flexbox();
+    @include flexwrap(wrap);
+    width: 100%;
+    margin-top: 5px;
+
+    .mb-cb,
+    .blank-cb {
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+        width: 30px;
+
+        input[type="checkbox"] {
+            margin: 0;
+        }
+    }
+
+    .mb-all,
+    .mb-group1,
+    .mb-group {
+        @include flexbox();
+        width: 100%;
+        position: relative;
+    }
+
+    .mb-cont > .level-cont {
+        > .mb-group > .mb-group-sw {
+            left: calc(50% - 15px);
+        }
+
+        .mb-cont > .level-cont {
+            > .mb-group > .mb-group-sw {
+                left: calc(50% - 30px);
+            }
+
+            .mb-cont > .level-cont {
+                > .mb-group > .mb-group-sw {
+                    left: calc(50% - 45px);
+                }
+            }
+        }
+    }
+
+    .mb-all-sw,
+    .mb-group-sw {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        span {
+            display: block;
+            position: relative;
+            top: -1.5px;
+            left: 0;
+
+            &:before,
+            &:after {
+                @include transition-duration(0.2s);
+                width: 10px;
+                height: 2px;
+                border-radius: 3px;
+                content: "";
+                display: block;
+                position: absolute;
+            }
+
+            &:after {
+                @include rotate(135deg);
+                left: 5.5px;
+            }
+
+            &:before {
+                @include rotate(45deg);
+            }
+        }
+
+        &.active span:after {
+            @include rotate(45deg);
+        }
+
+        &.active span:before {
+            @include rotate(135deg);
+        }
+    }
+
+    .mb-all-name,
+    .mb-group-name {
+        @include flexbox();
+        @include align-items(center);
+        cursor: pointer;
+        flex-grow: 1;
+        line-height: 20px;
+        padding: 5px;
+    }
+
+    .mb-cont {
+        @include flexwrap(wrap);
+        width: 100%;
+        display: none;
+    }
+
+    .mb-show {
+        @include flexbox();
+    }
+
+    .mb-cont-name,
+    .blank-name {
+        @include flexbox();
+        @include align-items(center);
+        width: calc(25% - 30px);
+        line-height: 20px;
+        padding: 5px;
+
+        @include edge() {
+            width: calc(25% - 30.05px);
+        }
+    }
+
+    .level-blank {
+        @include flexbox();
+        width: 30px;
+    }
+
+    .level-cont {
+        @include flexbox();
+        @include flexwrap(wrap);
+        width: calc(100% - 30px);
+    }
+}
+
+//已選擇人員收合
+.mb-slted-sw {
+    width: auto;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 5px 0 0;
+    text-align: right;
+    vertical-align: middle;
+
+    &:before {
+        width: 15px;
+        height: 15px;
+        border: 1px solid #666;
+        border-radius: 3px;
+        content: "";
+        display: block;
+    }
+
+    span {
+        display: block;
+        position: relative;
+        top: -10px;
+        left: 3.5px;
+
+        &:before,
+        &:after {
+            width: 9px;
+            height: 2px;
+            background: #666;
+            border-radius: 3px;
+            content: "";
+            display: block;
+            position: absolute;
+        }
+
+        &:after {
+            @include rotate(90deg);
+            @include transition-duration(0.2s);
+        }
+    }
+
+    &.active span:after {
+        @include rotate(0deg);
+    }
+}
+

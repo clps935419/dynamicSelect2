@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper font_M">
+        <h1>選項disabled(含其他功能)</h1>
+        <select id="area" prev_placeholder="區域" placeholder="區域" search_placeholder="請輸入部分區域名稱"
+            no_results_text="查無此區域"></select>
+        <input type="hidden" id="area_input">
+        <select id="depart" prev_placeholder="部門" placeholder="請選擇部門" search_placeholder="請輸入部分部門名稱"
+            no_results_text="查無此部門"></select>
+        <input type="hidden" id="depart_input">
+        <select id="people" prev_placeholder="人員" placeholder="請選擇人員" search_placeholder="請輸入部分人員名稱"
+            no_results_text="查無此人員"></select>
+        <input type="hidden" id="ep_input">
+        <select id="tool" prev_placeholder="物品" placeholder="請選擇物品" search_placeholder="請輸入部分物品名稱"
+            no_results_text="查無此物品"></select>
+        <input type="hidden" id="tool_input">
+        <br>
+        <h1>整個下拉disabled</h1>
+        <select id="test" disabled prev_placeholder="人員" placeholder="請選擇人員" search_placeholder="請輸入部分人員名稱"
+            no_results_text="查無此物品"></select>
+        <input type="hidden" id="test_input">
+    </div>
+</body>
+</html>

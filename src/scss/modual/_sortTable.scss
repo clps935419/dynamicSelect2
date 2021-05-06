@@ -1,0 +1,67 @@
+//可排序及不可排序符號
+th.sort-th {
+    cursor: pointer;
+}
+
+.sort-th .sort-th-content,
+.sort-th .sort-down-last,
+.sort-th .sort-up-last,
+.default-sort-th .default-sort-th-ascending,
+.default-sort-th .default-sort-th-descending {
+    padding: 3px 15px;
+    position: relative;
+}
+
+.sort-th .sort-th-content:before,
+.sort-th .sort-th-content:after,
+.sort-th .sort-down-last:before,
+.sort-th .sort-up-last:before {
+    width: 10px;
+    height: 10px;
+    content: "";
+    display: block;
+    line-height: 10px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: 0;
+}
+
+.sort-th .sort-th-content:after {
+    margin-top: -8px;
+}
+
+.sort-th .sort-down-last:before {
+    margin-top: -5px;
+}
+
+.sort-th .sort-up-last:before {
+    margin-top: -5px;
+}
+
+.default-sort-th .default-sort-th-ascending:before,
+.default-sort-th .default-sort-th-descending:before {
+    width: 10px;
+    height: 10px;
+    content: "";
+    display: block;
+    line-height: 10px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.sort-th .sort-th-content:before,
+.sort-th .sort-th-content:after,
+.sort-th .sort-down-last:before,
+.sort-th .sort-up-last:before,
+.sort-th .sort-th-content.sort-up:after,
+.sort-th .sort-up-last.sort-up:before,
+.sort-th .sort-th-content.sort-down:before,
+.sort-th .sort-down-last.sort-down:before,
+.default-sort-th .default-sort-th-ascending:before,
+.default-sort-th .default-sort-th-descending:before {
+    background-position: center;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,216 @@
+@mixin loading-style {
+    width: 300px;//loading 視窗寬度
+    display: none;
+    background: rgba(255, 255, 255, 0.95);//loading視窗背景顏色
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050; //loading 統一的zindex
+}
+
+
+.loading-style2 {
+    @include loading-style;
+
+    //線條包裝
+    .line-wrapper {
+        @include flexbox();
+        @include align-items(center);
+        width: calc(100% - 30px);
+        height: 14px;
+        border-radius: 15px;
+        background: rgba(159, 159, 159, 0.2);
+        margin: 2px 15px;
+        padding: 2px;
+        overflow: hidden;
+    }
+
+    //裡面的線條
+    .load-line {
+        width: 100%;
+        height: 10px;
+        background: #5B9DD8;
+        border-radius: 10px;
+    }
+
+    //文字%數
+    .percentage {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-align: center;
+        color: #333;
+    }
+}
+
+
+.loading-style1 {
+    @include loading-style;
+    
+
+    .load-cont {
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+
+//處理說明文字
+.load-cont {
+    width: calc(100% - 30px);
+    color: #333;
+    margin: 15px 15px 0 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//功能鈕
+.load-btn {
+    border-top: 1px solid #efefef;
+    margin-top: 10px;
+    padding: 5px 15px;
+    text-align: center;
+}
+
+//圓點動畫
+.load-dot {
+    width: 60px;
+    height: 60px;
+    margin: 0 0 15px -30px;
+    position: relative;
+    top: 15px;
+    left: 50%;
+
+    > div {
+        width: 16px;
+        height: 16px;
+        animation: spin-a 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
+        background: #00AACF;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transform-origin: 20px 20px;
+    }
+
+    > .dot2 {
+        animation: spin-b 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
+        background: #F6C574;
+        top: 10px;
+        right: 10px;
+        left: auto;
+        transform-origin: -4px 20px;
+    }
+
+    > .dot3 {
+        animation: spin-c 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
+        background: #00B3A0;
+        top: auto;
+        right: 10px;
+        bottom: 10px;
+        left: auto;
+        transform-origin: -4px -4px;
+    }
+
+    > .dot4 {
+        animation: spin-d 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
+        background: #FC5652;
+        top: auto;
+        bottom: 10px;
+        transform-origin: 20px -4px;
+    }
+}
+
+@keyframes spin-a {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-b {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-c {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-d {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    75% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

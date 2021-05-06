@@ -1,0 +1,181 @@
+div.calendar {
+    cursor: default;
+    font-size: 11px;
+    position: relative;
+    //left: -1000px;
+    top: -1000px;
+    width: 270px;
+}
+
+.calendar table {
+    width: 270px;
+    background: #fff;
+    border: 1px solid #d9dee4;
+    color: #000;
+    position: absolute;
+    z-index: z(content, calendar_table);
+}
+
+.calendar .button {
+    background: #fff;
+    color: #555f66;
+    padding: 5px 0;
+}
+
+.calendar thead .title,
+.calendar thead .title1,
+.calendar thead .title1:hover {
+    background: #fff;
+    color: #555f66;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.calendar table .wn {
+    border-right: 1px solid #ccc;
+    color: #777;
+}
+
+.calendar thead .name {
+    background: #cbcfd1;
+    color: #000;
+    padding: 5px 0;
+}
+
+.calendar thead .weekend {
+    color: #ea7565;
+}
+
+.calendar thead .hilite {
+    background: #e8e8e8;
+    color: #000;
+}
+
+.calendar thead .active {
+    background: #e8e8e8;
+    color: #000;
+}
+
+.calendar thead .daynames {}
+
+.calendar tbody td {
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    padding: 5px 0;
+}
+
+.calendar tbody .day {}
+
+.calendar tbody .otherMonth {
+    font-size: 80%;
+    color: #bbb;
+}
+
+.calendar tbody .oweekend {
+    color: #fbb;
+}
+
+.calendar tbody .rowhilite td {
+    background: #f9f9f9;
+}
+
+.calendar tbody .rowhilite td.wn {
+    background: #f9f9f9;
+}
+
+.calendar tbody td.weekend {
+    color: #ea7565;
+}
+
+.calendar tbody td.hilite {
+    background: #e8e8e8;
+}
+
+.calendar tbody td.active {
+    background: #e8e8e8;
+}
+
+.calendar tbody td.today {
+    background: rgba(255, 104, 36, 0.1);
+    color: #ff6824;
+    font-weight: blod;
+}
+
+.calendar tbody td.selected {
+    background: #7f8a93;
+    color: #fff;
+    font-weight: bold;
+}
+
+.calendar tbody .disabled {
+    color: #999;
+}
+
+.calendar tbody .emptycell {
+    visibility: hidden;
+}
+
+.calendar tbody .emptyrow {
+    display: none;
+}
+
+.calendar tfoot .ttip {
+    background: #f4f4f4;
+    padding: 5px 0;
+}
+
+.calendar .combo {
+    width: 4em;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    line-height: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: z(content, calender_combol); //要比table大
+}
+
+.calendar .combo .label {
+    padding-bottom: 1px;
+    text-align: center;
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.calendar .combo .label-IEfix {
+    padding-bottom: 1px;
+    text-align: center;
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.calendar .combo .label-IEfix {
+    width: 4em;
+}
+
+.calendar .combo .hilite {
+    background: #e8e8e8;
+}
+
+.calendar .combo .active {
+    background: #7f8a93;
+    color: #fff;
+    font-weight: bold;
+}
+
+/*****Webkit (Chrome, Safari, Opera)*****/
+// @media screen and (-webkit-min-device-pixel-ratio: 0) {
+//   .calendar table {
+//     margin-left: -92px;
+//   }
+// }
+
+/*****Firefox*****/
+@-moz-document url-prefix () {
+    .calendar table {
+        margin-left: -85px;
+    }
+}

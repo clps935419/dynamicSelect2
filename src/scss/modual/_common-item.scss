@@ -1,0 +1,421 @@
+//按鈕、輸入框、下拉選單...標準格式
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+.file-button,
+.file-upload-btn,
+.multiple-upload-btn {
+    background-color: #dbd7d1;
+    border-color: rgba(0, 0, 0, 0.03) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.03);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    color: #333;
+    display: inline-block;
+    margin: 1px 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+input[type="button"]:disabled,
+input[type="button"]:hover:disabled,
+input[type="submit"]:disabled,
+input[type="submit"]:hover:disabled,
+input[type="reset"]:disabled,
+input[type="reset"]:hover:disabled,
+button:disabled,
+button:hover:disabled,
+.file-button.disabled,
+.file-button:hover.disabled,
+.file-upload-btn.disabled,
+.file-upload-btn:hover.disabled,
+.multiple-upload-btn.disabled,
+.multiple-upload-btn:hover.disabled {
+    background-color: #dbd7d1;
+    border-color: rgba(0, 0, 0, 0.03) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.03);
+    color: #bcbcbc;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover,
+.file-button:hover,
+.file-upload-btn:hover,
+.multiple-upload-btn:hover {
+    background-color: #f3f3f3;
+    border-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.03) rgba(0, 0, 0, 0.03) rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+.editablearea {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5) inset;
+    margin: 1px 0;
+}
+
+textarea,
+.editablearea {
+    padding: 5px;
+}
+
+.editablearea {
+    overflow-y: auto;
+
+    .contentedit {
+        max-width: 100%;
+        min-height:1em;
+        -webkit-user-modify: read-write-plaintext-only;
+        /* // 純文字顯示 */
+        -ms-user-modify: read-write-plaintext-only;
+        -moz-user-modify: read-write-plaintext-only;
+        user-modify: read-write-plaintext-only;
+        -webkit-user-select: text;
+        /* // 解決IOS部分手機不支援contenteditable=true屬性問題 */
+        /* 換行一定要加不然IE打超過攔寬不會換行 */
+        word-wrap: break-word;
+        /* focus的時候邊框消失 */
+        outline: 0px solid transparent;
+    }
+}
+
+//IE的刪除鈕隱藏
+input[type="text"]::-ms-clear,
+input[type="tel"]::-ms-clear {
+    display: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}
+
+input[type="radio"]+input[type="radio"],
+input[type="checkbox"]+input[type="checkbox"] {
+    margin-left: 5px;
+}
+
+.checkbox input[type="radio"],
+.checkbox input[type="checkbox"] {
+    margin: 0;
+    vertical-align: middle;
+}
+
+.checkbox input[type="radio"]+input[type="radio"],
+.checkbox input[type="checkbox"]+input[type="checkbox"] {
+    margin-left: 0;
+}
+
+.label-input-item {
+    user-select: none;
+    cursor: pointer;
+
+    &:first-child {
+        input[type="checkbox"],input[type="radio"] {
+            margin-left: 0;
+        }
+    }
+
+    input[type="checkbox"],input[type="radio"] {
+        margin: 0 5px;
+    }
+}
+
+select {
+    max-width: 100%;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: #FFF;
+    background-position: right center;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5) inset;
+    margin: 1px 0;
+    padding: 0 30px 0 5px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="number"]:disabled,
+input[type="tel"]:disabled,
+textarea:disabled,
+select:disabled,
+select:hover:disabled {
+    background-color: #EFEFEF;
+    color: #BCBCBC;
+}
+
+input[type="number"] {
+    text-align: right;
+}
+
+//可輸入可下拉選單
+.select-input,
+.sec-pick {
+    width: 100%;
+    max-width: 100%;
+    display: inline-block;
+    position: relative;
+
+    input[type="text"] {
+        width: calc(100% - 25px);
+        border: none;
+        box-shadow: none;
+        position: absolute;
+        left: 3px;
+        top: 2.5px;
+        z-index: 1;
+
+        @include firefox {
+            top: 3px;
+        }
+    }
+}
+
+.sec-pick {
+    width: auto;
+}
+
+.select-input,
+.sec-pick {
+    select {
+        width: 100%;
+    }
+}
+
+select {
+    option {
+        color: black;
+    }
+
+    .opt-minor {
+        color: #808080;
+    }
+}
+
+//萬年曆新樣式
+input[type="text"].pc-text {
+    cursor: default;
+}
+
+button.pc-btn,
+button.pc-btn:hover {
+    @include icon-img(calendar);
+    height: 23px;
+    cursor: pointer;
+    background: no-repeat scroll right center;
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+.clear-calendar {
+    width: 20px;
+    height: 23px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    z-index: 2;
+
+    &:before,
+    &:after {
+        background: #000;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 11px;
+        left: 6px;
+    }
+
+    &:before {
+        @include rotate(45deg);
+    }
+
+    &:after {
+        @include rotate(-45deg);
+    }
+}
+
+//下方分隔線、筆數及跳頁
+.divider {
+    width: 100%;
+    height: 15px;
+    margin-top: 5px;
+}
+
+.divideritems {
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    width: 100%;
+    color: #FFF;
+    line-height: 30px;
+    margin-top: 5px;
+    padding: 2px 5px;
+
+    .left,
+    .right {
+        @include flexbox();
+        @include align-items(center);
+    }
+
+    .right {
+        input[type="button"] {
+            margin-right: 3px;
+        }
+    }
+
+    input[type="button"],
+    input[type="submit"] {
+        width: 40px;
+    }
+}
+
+
+
+//備註
+.explanation {
+    width: 100%;
+    padding: 5px;
+}
+
+
+//按鈕ex:修改、刪除、回上一層
+
+//按鈕
+.btn {
+    width: 100%;
+    margin-top: 5px;
+
+    .left {
+        float: left; 
+    }
+
+    .right {
+        float: right;
+    }
+
+    &:before,
+    &:after {
+        clear: both;
+        content: "";
+        display:table;
+    }
+}
+
+//讓btn的內容靠右邊
+.right-btn {
+    @include justify-content(flex-end);
+}
+
+/*方式二
+使用方式：
+<div class="ellipsis" data-row="要顯示的行數">內容</div>
+*/
+.ellipsis {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+
+    &.eps-dot {
+        position: relative;
+
+        &:before {
+            width: 25px;
+            height: 15px;
+            background: linear-gradient(270deg, rgba(255, 255, 255, 1)50%, rgba(255, 255, 255, 0.5)100%);
+            background: -moz-linear-gradient(270deg, rgba(255, 255, 255, 1)50%, rgba(255, 255, 255, 0.5)100%);
+            background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 1)50%, rgba(255, 255, 255, 0.5)100%);
+            background: -o-linear-gradient(270deg, rgba(255, 255, 255, 1)50%, rgba(255, 255, 255, 0.5)100%);
+            content: "...";
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            text-align: right;
+        }
+    }
+}
+
+//列表資料隱藏/顯示表格
+.switch-btn {
+    text-decoration: none;
+
+    .icon-down_circle,
+    .icon-up_circle {
+        margin-left: 5px;
+        vertical-align: middle;
+
+        &.hide {
+            display: none;
+        }
+    }
+}
+
+//操作方式備註說明
+.help-cont {
+    width: calc(100% - 45px);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icon-title-help-btn {
+    padding: 10px;
+    position: relative;
+    text-decoration: none;
+}
+
+.icon-title-help-btn:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icon-title-help-btn:hover:after {
+    width: 150px;
+    background: #FFFFFA;
+    border: 1px solid #F3F3F3;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    color: black;
+    content: attr(data-title);
+    padding: 7.5px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    z-index: 50;
+}
+
+//遮色片
+.shade {
+    width: 100%;
+    height: 100Vh;
+    background: rgba(0, 0, 0, .2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: z(content, shade);
+}
+
+//挑選資料
+.picked-area {
+    width: 100%;
+    margin-top: 5px;
+}

@@ -1,0 +1,127 @@
+.online_help {
+    #top {
+        height: 80px;
+        position: static;
+
+        .topinfor {
+            position: relative;
+
+            .title {
+                width: 100%;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 25px;
+                letter-spacing: 5px;
+                padding: 7px 210px 8px 0 ;
+                position: absolute;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.wrapper.rwd.online_help {
+    @include b768 {
+        #top {
+
+            .title span {
+                display: none;
+            }
+        }
+    }
+
+    @include b540 {
+        #top {
+
+            .title {
+                display: none;
+            }
+        }
+    }
+}
+
+/*****Online Help*****/
+#oh-main {
+    width: calc(100% - 40px);
+    float: left;
+    margin: 10px 20px;
+}
+
+.oh-tilte {
+    width: 100%;
+    float: left;
+    color: #333;
+    font-weight: bold;
+    margin: 25px 0 5px 0;
+    padding: 5px;
+}
+
+.oh-content {
+    width: 100%;
+    float: left;
+    padding: 5px;
+}
+
+.ins-content img,
+.oh-content video {
+    max-width: 100%;
+    height: auto;
+    margin-top: 5px;
+}
+
+.ins-title,
+.ins-content {
+    width: calc(100% - 10px);
+    float: left;
+    color: #555;
+    font-size: 14px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.ins-content {
+    color: #000;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 5px;
+}
+
+.ins-title:before {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent #555;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    margin-top: -5px;
+}
+
+.ins-title.content-open:before {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 7px 7px;
+    border-color: transparent transparent #555 transparent;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    margin-top: -4px;
+}
+
+.ins-title a {
+    color: #16679e;
+    
+    &:hover {
+        color: #1e8aff;
+        text-decoration: underline;
+    }
+}
+
+.ins-content+.ins-title {
+    margin-top: 10px;
+}

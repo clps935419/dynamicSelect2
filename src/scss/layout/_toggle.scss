@@ -1,0 +1,56 @@
+#toggle-btn {
+    display: none;
+
+    &:checked ~ #top {
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &:checked ~ .left-menu {
+        width: 0;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        overflow-y: unset;
+        top: 0;
+        visibility: hidden;
+    }
+
+    &:checked ~ .home_btn {
+        width: 0;
+        opacity: 0;
+        top: 0;
+        visibility: hidden;
+    }
+
+    &:checked ~ .content {
+        padding-top: 40px; //sys_bg高度
+        padding-left: 0;
+    }
+
+    &:checked ~ .system_bg {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        top: 0;
+        left: 0;
+
+        .bars {
+            top: 0;
+        }
+    }
+    &:checked ~ .fixed-area {
+        top: 45px;
+        left: 10px;
+    }
+}
+
+//只有rightmain
+#toggle-btn[condition="browser-style2"] {
+    ~.content {
+        padding: 0;
+    }
+
+    ~.fixed-area {
+        top: 0;
+        left: 10px;
+    }
+}

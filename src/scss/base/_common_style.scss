@@ -1,0 +1,425 @@
+//共用樣式
+$Allfont-style: Arial,
+Microsoft JhengHei Revise,
+"微軟正黑體",
+"Microsoft JhengHei",
+"新細明體",
+"PMingLiU",
+sans-serif;
+$Allfont-size: 12px;
+
+%box-sizing {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body,
+input,
+select,
+textarea {
+    font-family: $Allfont-style;
+    font-size: $Allfont-size;
+}
+
+html,
+body {
+    height: 100%;
+    background: url(main.css) white fixed;
+}
+
+@font-face {
+    font-family: Microsoft JhengHei Revise;
+    unicode-range: U+7db0, U+78A7, U+7B75;
+    // ASCII (碧筵綰) 
+    font-style: normal;
+    font-weight: normal;
+    src: local("Microsoft JhengHei");
+}
+
+html,
+body,
+div,
+a,
+ol,
+ul,
+li,
+input,
+textarea,
+table,
+th,
+tr,
+td,
+span,
+label,
+aside,
+section,
+img,
+audio,
+video,
+iframe,
+select {
+    @extend %box-sizing;
+}
+
+//red紅色
+color1 {
+    color: #f00;
+    vertical-align: middle;
+}
+
+//blue藍色
+color2 {
+    color: #00f;
+    vertical-align: middle;
+}
+
+//yellow黃色
+color3 {
+    color: #ff0;
+    vertical-align: middle;
+}
+
+//gray灰色
+color4,
+.color4 {
+    color: #808080;
+    vertical-align: middle;
+}
+
+//green綠色
+color5 {
+    color: #390;
+    vertical-align: middle;
+}
+
+//星號
+star {
+    color: #f00;
+    font-size: 14px;
+    line-height: 12px;
+    padding-right: 3px;
+}
+
+//驚嘆號
+exclamation {
+    color: #00f;
+    font-size: 14px;
+    line-height: 12px;
+    padding-right: 3px;
+}
+
+//百分比
+percentage {
+    color: #00f;
+    font-size: 12px;
+    line-height: 12px;
+    padding-right: 2px;
+}
+
+//Key值星號
+keystar {
+    color: #f00;
+    font-size: 12px;
+    line-height: 12px;
+    padding-right: 2px;
+}
+
+
+spacing4 {
+    letter-spacing: 4px;
+}
+
+spacing5 {
+    letter-spacing: 5px;
+}
+
+spacing6 {
+    letter-spacing: 6px;
+}
+
+spacing8 {
+    letter-spacing: 8px;
+}
+
+spacing9 {
+    letter-spacing: 9px;
+}
+
+spacing10 {
+    letter-spacing: 10px;
+}
+
+spacing12 {
+    letter-spacing: 12px;
+}
+
+spacing15 {
+    letter-spacing: 15px;
+}
+
+spacing18 {
+    letter-spacing: 18px;
+}
+
+spacing20 {
+    letter-spacing: 20px;
+}
+
+spacing24 {
+    letter-spacing: 24px;
+}
+
+.pdf,
+.file-link {
+    color: #960;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.pdf:hover,
+.file-link:hover {
+    color: #f00;
+    text-decoration: underline;
+}
+
+.alink {
+    color: blue;
+    text-decoration: underline;
+}
+
+.alink:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+textarea {
+    max-width: 100%;
+    width: 100%;
+    height: 60px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    table-layout: fixed;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+iframe {
+    width: 100%;
+    background: #fff;
+    border: none;
+    overflow: hidden;
+}
+
+//符號階層
+$tmp_level: 0.7em;
+$tmp: (level1: $tmp_level,
+    level2: $tmp_level + 1,
+    level3: $tmp_level + 2,
+    level4: $tmp_level + 3,
+    level5: $tmp_level + 4);
+
+@each $name,
+$lv in $tmp {
+    .list-#{$name} {
+        margin-left: $lv;
+        display: flex;
+        align-items: center;
+
+        &:before {
+            width: 6px;
+            height: 6px;
+            float: left;
+            background-color: #444;
+            content: "";
+            margin-right: 0.25em;
+            margin-left: -0.7em;
+        }
+    }
+}
+
+.list-level2:before {
+    border-radius: 50%;
+}
+
+.list-level3:before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.list-level4:before {
+    width: 0;
+    height: 0;
+    background: none;
+    border-style: solid;
+    border-width: 4px 0 4px 5px;
+    border-color: transparent transparent transparent #444;
+}
+
+.list-level5:before {
+    background-color: transparent;
+}
+
+//換系統顏色功能、字體
+.wrapper .change-style {
+    display: none;
+}
+
+.wrapper.change #top {
+    .change-style {
+        width: 15px;
+        height: 15px;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+        z-index: z(change_style);
+
+        > div {
+            width: 200px;
+            height: 300px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+            border-radius: 3px;
+            display: none;
+            padding: 0 10px 10px 10px;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+
+            .style-title {
+                border-top: 1px solid #EFEFEF;
+                clear: both;
+                font-size: 12px;
+                font-weight: bold;
+                margin: 10px 0 5px 0;
+                padding-top: 10px;
+
+                &:first-of-type {
+                    border-top: none;
+                    margin-top: 0;
+                }
+            }
+
+            input[type="radio"] {
+                display: none;
+            }
+
+            input[type="radio"]:checked+.change-color:after {
+                transform: scale(1.3);
+            }
+
+            .change-font {
+                width: auto;
+                float: left;
+                cursor: pointer;
+                clear: both;
+                line-height: 23px !important;
+                padding-left: 28px;
+                position: relative;
+                transition: .2s;
+
+                &:last-of-type {
+                    margin-bottom: 10px;
+                }
+
+                &:before {
+                    width: 12px;
+                    height: 12px;
+                    border: 2px solid #EDEDED;
+                    border-radius: 50%;
+                    content: "";
+                    position: absolute;
+                    top: 4px;
+                    left: 5px;
+                    transition: .2s;
+                }
+
+                &:after {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    content: "";
+                    position: absolute;
+                    top: 8px;
+                    left: 9px;
+                    transition: .2s;
+                }
+
+                &.font-s {
+                    font-size: 10px !important;
+                }
+
+                &.font-m {
+                    font-size: 12px !important;
+                }
+
+                &.font-l {
+                    font-size: 14px !important;
+                }
+
+                &.font-xl {
+                    font-size: 16px !important;
+                }
+
+                &.font-xxl {
+                    font-size: 18px !important;
+                }
+            }
+
+            .change-color {
+                width: 22px;
+                height: 22px;
+                border-radius: 2px;
+                cursor: pointer;
+                display: inline-block;
+                margin-left: 5px;
+                position: relative;
+                transition: .2s;
+
+                &:after {
+                    width: 11px;
+                    height: 11px;
+                    @include icon-img(checkWhite);
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 5px;
+                    top: 6px;
+                    transform: scale(0);
+                    transition: .2s;
+                    z-index: 1;
+                }
+            }
+        }
+
+        //版次顯示
+        .version {
+            font-size: 12px;
+            padding-left: 10px;
+            position: relative;
+
+            &:before {
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 3px 0 3px 5px;
+                border-color: transparent transparent transparent #444;
+                content: "";
+                display: block;
+                position: absolute;
+                left: 1px;
+                top: 3.5px;
+            }
+        }
+
+        &:hover div {
+            display: block;
+        }
+    }
+}

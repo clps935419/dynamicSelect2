@@ -1,0 +1,266 @@
+$f-h-icons: (
+  sprite: (
+    width: 3700px,
+    height: 3700px,
+    svgPath: "svg(UTF8)/f-h-combine-svg.svg"
+  ),
+   file-text:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: 0px,
+      backgroundY: 0px
+    ),
+ file-text-disabled:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -100px,
+      backgroundY: -100px
+    ),
+ file-text-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -200px,
+      backgroundY: -200px
+    ),
+ file-text2:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -300px,
+      backgroundY: -300px
+    ),
+ file-upload:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -400px,
+      backgroundY: -400px
+    ),
+ file-upload-disabled:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -500px,
+      backgroundY: -500px
+    ),
+ floppy:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -600px,
+      backgroundY: -600px
+    ),
+ floppy-disabled:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -700px,
+      backgroundY: -700px
+    ),
+ floppy-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -800px,
+      backgroundY: -800px
+    ),
+ go-top:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -900px,
+      backgroundY: -900px
+    ),
+ grid:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -1000px,
+      backgroundY: -1000px
+    ),
+ grid-disabled:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -1100px,
+      backgroundY: -1100px
+    ),
+ grid-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -1200px,
+      backgroundY: -1200px
+    ),
+ help-blue:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -1300px,
+      backgroundY: -1300px
+    ),
+ help-blue-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -1400px,
+      backgroundY: -1400px
+    ),
+ help-green:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -1500px,
+      backgroundY: -1500px
+    ),
+ help-green-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -1600px,
+      backgroundY: -1600px
+    ),
+ help-orange:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -1700px,
+      backgroundY: -1700px
+    ),
+ help-orange-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -1800px,
+      backgroundY: -1800px
+    ),
+ help-purple:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -1900px,
+      backgroundY: -1900px
+    ),
+ help-purple-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -2000px,
+      backgroundY: -2000px
+    ),
+ help-red:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -2100px,
+      backgroundY: -2100px
+    ),
+ help-red-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -2200px,
+      backgroundY: -2200px
+    ),
+ help-teal:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -2300px,
+      backgroundY: -2300px
+    ),
+ help-teal-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -2400px,
+      backgroundY: -2400px
+    ),
+ home-blue:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -2500px,
+      backgroundY: -2500px
+    ),
+ home-blue-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -2600px,
+      backgroundY: -2600px
+    ),
+ home-green:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -2700px,
+      backgroundY: -2700px
+    ),
+ home-green-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -2800px,
+      backgroundY: -2800px
+    ),
+ home-orange:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -2900px,
+      backgroundY: -2900px
+    ),
+ home-orange-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -3000px,
+      backgroundY: -3000px
+    ),
+ home-purple:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -3100px,
+      backgroundY: -3100px
+    ),
+ home-purple-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -3200px,
+      backgroundY: -3200px
+    ),
+ home-red:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -3300px,
+      backgroundY: -3300px
+    ),
+ home-red-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -3400px,
+      backgroundY: -3400px
+    ),
+ home-teal:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -3500px,
+      backgroundY: -3500px
+    ),
+ home-teal-hover:
+    (
+      width: 100px,
+      height: 100px,
+      backgroundX: -3600px,
+      backgroundY: -3600px
+    ),
+);

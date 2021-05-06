@@ -1,0 +1,152 @@
+/*****下拉多選功能*****/
+.ui-multiselect {
+    width: 80%;
+    max-width: 100%;
+    height: 27.9px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../images/pub/select_arrow.png) no-repeat scroll right center #FFF;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5) inset;
+    font-family: Arial, "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", sans-serif;
+    margin: 1px 0;
+    padding: 3px 30px 1px 3px;
+    text-align: left;
+    vertical-align: middle;
+
+    &:hover {
+        background: url(../images/pub/select_arrow-off.png) no-repeat scroll right center #FFF;
+        border: 1px solid #CCC;
+        border-radius: 3px;
+        box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5) inset;
+        margin: 1px 0;
+        padding: 3px 30px 1px 3px;
+    }
+}
+
+.ui-multiselect-header {
+    margin-bottom: 3px;
+    padding: 5px 0 5px 4px;
+
+    ul {
+        li {
+            float: right;
+            padding: 0 10px 0 0;
+
+        }
+    }
+}
+
+.ui-multiselect-header li.ui-multiselect-close {
+    float: right;
+    padding-right: 0;
+    text-align: right;
+}
+
+.ui-multiselect-hasfilter ul {
+    position: relative;
+    top: 2px;
+}
+
+.ui-multiselect-filter {
+    float: left;
+    margin-right: 10px;
+
+    input {
+        width: 100px;
+        height: 20px;
+        border: 1px solid #292929;
+        margin-left: 5px;
+        padding: 2px;
+        -webkit-appearance: textfield;
+        -webkit-box-sizing: content-box;
+    }
+}
+
+.ui-multiselect-menu {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    display: none;
+    padding: 3px;
+    position: absolute;
+    text-align: left;
+    z-index: 10000;
+}
+
+.ui-multiselect-checkboxes {
+    position: relative
+        /* fixes bug in IE6/7 */
+    ;
+    overflow-y: auto;
+
+    label {
+        cursor: default;
+        display: block;
+        border: 1px solid transparent;
+        padding: 3px 1px;
+
+        input {
+            position: relative;
+            top: 1px;
+            outline: none;
+        }
+    }
+
+    li {
+        width: 25%;
+        clear: both;
+        padding-right: 3px;
+    }
+}
+
+.ui-multiselect-checkboxes li.ui-multiselect-optgroup-label {
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+
+    a {
+        display: block;
+        margin: 1px 0;
+        padding: 3px;
+        text-decoration: none;
+    }
+}
+
+.ui-helper-reset>li {
+    display: inline-block;
+}
+
+.ui-helper-reset>.ui-multiselect-optgroup-label {
+    display: list-item;
+}
+
+.ui-helper-clearfix {
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+        border-collapse: collapse;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.ui-widget-content {
+    border: 1px solid #DDD;
+    background: #FFF;
+    color: #333;
+
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+}
+
+.ui-widget-header {
+    color: #333;
+    font-weight: bold;
+}

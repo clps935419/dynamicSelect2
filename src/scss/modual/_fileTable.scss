@@ -1,0 +1,154 @@
+//上傳檔案
+.file-upload2-btn,
+.multiple-upload2-btn {
+    background:#E5E5E5;
+    border:1px dashed #CCC;
+    border-radius: 3px;
+    color:#333;
+    display:inline-block;
+    margin:1px 0;
+    padding:5px 35px;
+    position:relative;
+    text-align:center;
+    vertical-align:middle;
+
+    &:hover,
+    &.hover {
+        background:#F3F3F3;
+        border:1px dashed #DDD;
+    }
+
+    &.disabled,
+    &.disabled:hover,
+    &.disabled.hover {
+        background:#E5E5E5;
+        border:1px dashed #CCC;
+        color:#BCBCBC;
+
+    }
+}
+
+.file-upload-btn,
+.multiple-upload-btn,
+.file-upload2-btn,
+.multiple-upload2-btn {
+    &:before {
+        content: "";
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+}
+
+.file-upload {
+    position: absolute;
+    left: -9999px;
+}
+
+.file-box {
+    position: relative;
+}
+
+.file-file {
+    width: 194px;
+    height: 27px;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+//檔案列表
+.file-table {
+    margin-top: 5px;
+
+    a {
+        color: blue;
+
+        &:hover {
+            color: red;
+        }
+    }
+}
+
+//圖片列表
+.draggable .file-img-table li>img {
+    cursor: move;
+}
+
+.draggable .placeholder {
+    @include firefox {
+        height: 100px;
+    }
+    background: #EEE;
+    border: 1px dashed #DDD;
+    opacity: 0.7;
+}
+
+.file-img-table {
+    width: 100%;
+    float: left;
+}
+
+.file-img-table li {
+    width: calc(16.66666% - 5px);
+    float: left;
+    border: 1px solid #EDEDED;
+    border-radius: 4%;
+    margin: 5px 5px 0 0;
+    padding: 2px 2px 5px 2px;
+    position: relative;
+    text-align: center;
+}
+
+.file-img-table li>img {
+    width: 100%;
+    height: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4% 4% 0 0;
+    margin-bottom: 5px;
+    padding: 35px 0;
+}
+
+//上傳中列表
+.uploading {
+    float: left;
+
+    td {
+        padding: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &:nth-child(1) {
+            width: 30px;
+        }
+        &:nth-child(2) {
+            text-align: left;
+        }
+        &:nth-child(3) {
+            text-align: right;
+        }
+    }
+
+    .upload-unfinished {
+        width: 100%;
+        height: 3.5px;
+        background: #e8e8e8;
+        position: relative;
+    }
+
+    .upload-finish {
+        height: 3.5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .file-icon {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}

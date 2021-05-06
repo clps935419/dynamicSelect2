@@ -1,0 +1,63 @@
+.fixed-area {
+    padding-top: 5px;
+    position: fixed;
+    top: 110px;
+    left: 160px;
+    right: 10px;
+    background: white;
+    z-index: z(top-msg);
+
+    ~ .content .rightmain {
+        padding-top: 1px;
+
+        .fixed-head {
+            margin-top: -2px;
+        }
+    }
+}
+
+.toolbar {
+    width: 100%;
+    margin-top: 5px;
+
+    +.filter {
+        clear: left;
+    }
+
+    li {
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        margin: 3px 7px 3px 3px;
+
+        img {
+            width: 22px;
+            height: 22px;
+            margin-bottom: 7px;
+        }
+
+        span {
+            width: 100%;
+            color: #444;
+            display: block;
+        }
+
+        &:hover span {
+            color: #000;
+            font-weight: bold;
+        }
+
+        &.disabled {
+            cursor: default;
+
+            span {
+                color: #C1C1C1;
+                font-weight: normal;
+            }
+        }
+
+        &.right {
+            float: right;
+        }
+    }
+}

@@ -1,0 +1,81 @@
+﻿.system_bg {
+    @include flexbox();
+    @include justify-content(space-between);
+    height: 40px;
+    background: #FFF;
+    border-bottom: 1px solid #F4F4F4;
+    line-height: 40px;
+    padding-right: 10px;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    left: 150px;
+    z-index: z(modal, sys_bg);
+
+    //漢堡選單
+    .bars {
+        display: block;
+        cursor: pointer;
+        margin: 0 10px;
+        z-index: z(modal, bar);
+
+        &>div {
+            @include flexbox();
+            @include align-items(center);
+            height: 100%;
+        }
+
+        .icon-minsize {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .arrow {
+            @include justify-content(center);
+            @include align-items(center);
+            width: 40px;
+            height: 40px;
+            display: none;
+            flex-direction: column;
+        }
+    }
+
+    .system_name {
+        @include flexbox();
+
+        .name_ch {
+            @include flexbox();
+            @include align-items(center);
+            width: auto;
+
+            &.hide {
+                display: none;
+            }
+        }
+
+        .name_en {
+            margin-right: 10px;
+        }
+
+        .icon-location,
+        .icon-location_on {
+            cursor: pointer;
+            margin-right: 5px;
+        }
+    }
+}
+
+//主要內容
+.content {
+    padding-top: 110px;
+    padding-left: 150px;
+    &.clear_pdTop {
+        padding: 0;
+    }
+}
+
+.rightmain {
+    width: 100%;
+    height: auto;
+    padding: 5px 10px;
+}

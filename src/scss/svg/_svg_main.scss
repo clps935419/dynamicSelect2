@@ -1,0 +1,454 @@
+@import "a-b-svg";
+@import "c-svg";
+@import "c-e-svg";
+@import "f-h-svg";
+@import "i-l-svg";
+@import "m-n-svg";
+@import "o-z-svg";
+@import "svg_mixin";
+
+$icon_list: $a-b-icons, $c-icons, $c-e-icons, $f-h-icons, $i-l-icons, $m-n-icons,$o-z-icons;
+@each $var in $icon_list {
+    /// Set the `$sprite` map
+    /// @group sprite
+    $sprite: map-get($var, sprite) ;
+
+    $new_map: map-remove($var, 'sprite');
+
+    @each $name, $content in $new_map {
+        .icon-#{$name}-btn {
+            display: inline-block;
+            background-image: url(map-get($sprite, svgPath));
+            background-size: mq-px2em(map-get($sprite, width))
+            mq-px2em(map-get($sprite, height));
+            @include sprite($name, $var);
+        }
+    }
+}
+
+i[class^="icon-"] {
+    font-size: 12px;
+}
+
+//banner圖鈕、menu more、help
+$themes: blue,
+red,
+green,
+orange,
+purple,
+teal;
+
+@each $name in $themes {
+    .wrapper.#{$name} {
+        .topbtn {
+            .icon-home {
+                @extend .icon-home-#{$name}-btn !optional;
+
+                &:hover {
+                    @extend .icon-home-#{$name}-hover-btn !optional;
+                }
+            }
+
+            .icon-help {
+                @extend .icon-help-#{$name}-btn !optional;
+
+                &:hover {
+                    @extend .icon-help-#{$name}-hover-btn !optional;
+                }
+            }
+
+            .icon-log-out {
+                @extend .icon-log-out-#{$name}-btn !optional;
+
+                &:hover {
+                    @extend .icon-log-out-#{$name}-hover-btn !optional;
+                }
+            }
+
+            .icon-close-window {
+                @extend .icon-close-window-#{$name}-btn !optional;
+
+                &:hover {
+                    @extend .icon-close-window-#{$name}-hover-btn !optional;
+                }
+            }
+
+            .icon-common-description {
+                @extend .icon-common-description-#{$name}-btn !optional;
+
+                &:hover {
+                    @extend .icon-common-description-#{$name}-hover-btn !optional;
+                }
+            }
+        }
+
+        .icon-more {
+            @extend .icon-more-#{$name}-btn !optional;
+        }
+
+        .icon-title-help-btn:before {
+            @extend .icon-help-#{$name}-btn !optional;
+            font-size: 28px;
+        }
+
+        .icon-title-help-btn:hover:before {
+            @extend .icon-help-#{$name}-hover-btn !optional;
+        }
+    }
+}
+
+//功能圖鈕
+$iconSize: (
+    'more': 18, //選單開
+    'less': 18, //選單合
+    'list': 14, //選單子項目
+    'location': 38, //路徑
+    'location_on': 38, //路徑
+    'help': 33,
+    'home': 43,
+    'log-out': 34,
+    'close-window': 41,
+    'common-description': 41,
+    'return3':24,
+    'minsize': 19,
+    'maxsize': 19,
+    'circle-down': 52, //下移,,菜籃
+    'circle-up': 52, //上移,,菜籃
+    'move-left': 52, //向左移
+    'move-right': 52 //向右移
+);
+
+@each $name,
+$size in $iconSize {
+    .wrapper {
+        .icon-#{$name} {
+            @extend .icon-#{$name}-btn !optional;
+            font-size: #{$size}px;
+
+            &:hover {
+                @extend .icon-#{$name}-hover-btn !optional;
+            }
+
+            &.disabled,
+            &:hover.disabled {
+                @extend .icon-#{$name}-disabled-btn !optional;
+                cursor: default;
+            }
+        }
+    }
+}
+
+//功能圖鈕
+$iconBtnSize: ('add': 27, //新增加號,深藍
+    'add2': 27, //新增加號,淺藍
+    'alert-help': 27, //help
+    'attachment': 27, //附件
+    'att-ref': 28, //參考,紅色,公文簽核
+    'att-ref2': 28, //參考,藍色,公文簽核
+    'back': 27, //回復資料
+    'blank-file': 27, //整頁模式,,公文製作
+    'browse': 27, //瀏覽
+    'calculator': 27, //計算
+    'capture': 27, //截取
+    'change': 28, //交換EX:起訖地點
+    'change2': 28, //交換EX:比例、金額
+    'check': 27, //確定
+    'copy': 28, //複製
+    'delete': 25, //刪除欄位內容,深灰
+    'delete2': 25, //刪除 紅
+    'download': 27, //下載
+    'download2': 27, //下載
+    'down-circle': 26, //展開
+    'edit': 28, //編輯,,成批編輯功能
+    'edit2': 28, //編輯,,無功能
+    'file-text': 27, //明細
+    'floppy': 27, //磁碟片
+    'grid': 27, //塊狀
+    'go-top': 28, //置頂按鍵
+    'info': 27, //資訊、備註,藍
+    'info2': 27, //資訊、備註,紅
+    'link': 27, //連結
+    'list-level5': 16, //項目符號
+    'list2': 27, //列表
+    'magic-wand': 27, //精靈模式,,公文製作
+    'minus': 27, //減
+    'on-job': 27, //在職
+    'off-job': 27, //離職
+    'not-allowed': 27, //禁止
+    'process': 27, //流程,,公文簽核
+    'seal': 27, //簽核,,公文簽核
+    'search': 27, //搜尋
+    'sortup': 27, //下移,,成批編輯功能、附件移動
+    'sortdown': 27, //上移,,成批編輯功能、附件移動
+    'stepmoveleft': 24, //步驟向左移
+    'stepmoveright': 24, //步驟向右移
+    'toggle-all-show': 27, //全部開啟
+    'toggle-all-hide': 23, //全部關閉
+    'trash': 27, //垃圾桶
+    'up-circle': 26 //收合
+);
+
+@each $name,
+$size in $iconBtnSize {
+    .wrapper {
+        .icon-#{$name}-btn {
+            font-size: #{$size}px;
+            display: inline-block;
+            vertical-align: middle;
+
+            &:hover {
+                @extend .icon-#{$name}-hover-btn !optional;
+            }
+
+            &.disabled,
+            &:hover.disabled {
+                @extend .icon-#{$name}-disabled-btn !optional;
+                cursor: default;
+            }
+        }
+    }
+}
+
+//重複功能圖鈕
+$iconRepeat: edit, //編輯,,無功能
+change; //交換EX:比例、金額
+
+@each $name in $iconRepeat {
+    .wrapper {
+        .icon-#{$name}2-btn {
+            @extend .icon-#{$name}-btn !optional;
+
+            &:hover {
+                @extend .icon-#{$name}-hover-btn !optional;
+            }
+
+            &.disabled,
+            &:hover.disabled {
+                @extend .icon-#{$name}-disabled-btn !optional;
+                cursor: default;
+            }
+        }
+    }
+}
+
+//選單
+$menuS: ('more': 16,
+    'less': 16,
+    'list': 12,
+);
+
+@each $name,
+$size in $menuS {
+    .wrapper.font_S {
+        .icon-#{$name} {
+            @extend .icon-#{$name}-btn !optional;
+            font-size: $size+px;
+        }
+    }
+}
+
+//初始畫面
+.icon-return3 {
+    @extend .icon-return-btn !optional;
+}
+
+//路徑
+.icon-location_on {
+    @extend .icon-location-on-btn !optional;
+}
+
+//置頂按鍵
+#top-btn:before {
+    @extend .icon-go-top-btn !optional;
+}
+
+//項目符號
+.list-level5:before {
+    @extend .icon-list-level5-btn !optional;
+}
+
+//列表資料隱藏/顯示表格
+.icon-down_circle {
+    @extend .icon-down-circle-btn !optional;
+}
+
+.icon-up_circle {
+    @extend .icon-up-circle-btn !optional;
+}
+
+//隱藏訊息
+.error-hide-btn {
+    @extend .icon-less-circle-btn !optional;
+    font-size: 26px;
+
+    &:hover {
+        @extend .icon-less-circle-hover-btn !optional;
+    }
+}
+
+//步驟左右移
+.stepmoveleft:before {
+    @extend .icon-stepmoveleft-btn !optional;
+}
+
+.stepmoveright:before {
+    @extend .icon-stepmoveright-btn !optional;
+}
+
+//禁止
+.icon-not-allowed-btn {
+    cursor: default;
+}
+
+//選單、banner收合
+.wrapper i.icon-minsize {
+    @extend .icon-maxsize-btn !optional;
+
+    &:hover {
+        @extend .icon-maxsize-hover-btn !optional;
+    }
+}
+
+#toggle-btn {
+    &:checked ~ .system_bg .bars {
+        .icon-minsize {
+            @extend .icon-minsize-btn !optional;
+
+            &:hover {
+                @extend .icon-minsize-hover-btn !optional;
+            }
+        }
+    }
+}
+
+//訊息圖示
+$messages: (error: (bgcolor: #DF4C50,
+        d-size: 37,
+        d-top: 18,
+        d-left: 18,
+        t-size: 14,
+        t-top: 3.5,
+        t-left: 3.5),
+    warning: (bgcolor: #DF4C50,
+        d-size: 38,
+        d-top: 17,
+        d-left: 18,
+        t-size: 14,
+        t-top: 3.3,
+        t-left: 3.5),
+    remind: (bgcolor: #F2BA0F,
+        d-size: 44,
+        d-top: 15,
+        d-left: 16,
+        t-size: 16,
+        t-top: 2.8,
+        t-left: 3),
+    query: (bgcolor: #10A3E7,
+        d-size: 44,
+        d-top: 16,
+        d-left: 16,
+        t-size: 15,
+        t-top: 4,
+        t-left: 4),
+    success: (bgcolor: #95C132,
+        d-size: 43,
+        d-top: 16.5,
+        d-left: 16.5,
+        t-size: 15,
+        t-top: 3.5,
+        t-left: 3));
+
+@each $name,
+$theme in $messages {
+    .msg-icon-#{$name} {
+        &:after {
+            background-color: map-get($theme, bgcolor);
+        }
+
+        &:before {
+            @extend .icon-#{$name}-btn !optional;
+            font-size: map-get($theme, d-size)+px;
+            top: map-get($theme, d-top)+px;
+            left: map-get($theme, d-left)+px;
+        }
+    }
+
+    .top-msg-#{$name} i:before {
+        @extend .icon-#{$name}-btn !optional;
+        font-size: map-get($theme, t-size)+px;
+        top: map-get($theme, t-top)+px;
+        left: map-get($theme, t-left)+px;
+        z-index: 5;
+    }
+
+    .top-msg-#{$name} i {
+        background-color: map-get($theme, bgcolor);
+    }
+}
+
+//OnlineHelp附件圖示
+.wrapper {
+
+    .icon-attachment,
+    .icon-attachment:hover {
+        @extend .icon-attachment-hover-btn !optional;
+        font-size: 26px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+//上傳檔案
+.file-upload-btn:before {
+    @extend .icon-file-upload-btn !optional;
+    font-size: 26px;
+    margin-top: -3px;
+    &.disabled {
+        @extend .icon-file-upload-disabled-btn !optional;
+    }
+}
+
+.multiple-upload-btn:before {
+    @extend .icon-multiple-upload-btn !optional;
+    font-size: 26px;
+    margin-top: -3px;
+    &.disabled {
+        @extend .icon-multiple-upload-disabled-btn !optional;
+    }
+}
+
+.file-upload2-btn:before {
+    @extend .icon-file-upload-btn !optional;
+    &.disabled {
+        @extend .icon-file-upload-disabled-btn !optional;
+    }
+}
+
+.multiple-upload2-btn:before {
+    @extend .icon-multiple-upload-btn !optional;
+    &.disabled {
+        @extend .icon-multiple-upload-disabled-btn !optional;
+    }
+}
+
+//上傳檔案中文件符號
+.file-icon {
+    @extend .icon-file-text2-btn !optional;
+    font-size: 28px;
+}
+
+.wrapper.font_XL,
+.wrapper.font_XXL {
+    .file-upload-btn,
+    .multiple-upload-btn {
+        &:before {
+            font-size: 28px;
+            margin-top: -5px;
+        }
+    }
+
+    .file-icon {
+        font-size: 30px;
+    }
+}
+

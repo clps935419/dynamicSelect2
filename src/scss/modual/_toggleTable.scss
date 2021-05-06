@@ -1,0 +1,161 @@
+.toggleTable-wrapper {
+    @include flexbox();
+    @include flexwrap(wrap);
+    width: 100%;
+
+    .toggleTable-card {
+        width: 100%;
+        margin-top: 5px;
+
+        .toggleTable-card-header {
+            @include flexbox();
+            @include justify-content(space-between);
+            border-style: solid;
+            border-width: 1px 1px 0 1px;
+            border-radius: 0 10px 0 0;
+            padding: 7px 10px;
+
+            &.active {
+                border: none;
+            }
+
+            .link-select-menu {
+                .cardMenu {
+                    height: 100%;
+                    cursor: pointer;
+                    display: block;
+                    padding: 8px 10px;
+
+                    &:hover {
+                        background: #F9F9F9;
+                        color: #52ABFF;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.toggleTable-card-header-left-nav,
+.toggleTable-card-header-right-nav {
+    @include flexbox();
+    @include align-items(center);
+}
+
+.toggleTable-card-content {
+
+    &.hide {
+        display: none;
+    }
+
+    .form {
+        margin-top: 0;
+    }
+}
+
+//link-select
+.link-select {
+    position: relative;
+    margin-right: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.link-select-bottom {
+    min-width: 200px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: -7px;
+    z-index: 329;
+}
+
+.link-select .link-select-bottom.top {
+    transform: translate(0%, -100%);
+    top: 0;
+
+    i {
+        top: 100%;
+    }
+
+    i::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+}
+
+.link-select-bottom.show {
+    display: block;
+}
+
+.link-select .link-select-bottom i {
+    width: 24px;
+    height: 12px;
+    position: absolute;
+    bottom: 100%;
+    left: 2px;
+    overflow: hidden;
+}
+
+.link-select .link-select-bottom i::after {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(45deg);
+}
+
+///V字收合
+.icon-toggle-arrow-btn {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    &:before,
+    &:after {
+        @include transition-duration(0.2s);
+        width: 10px;
+        height: 2.5px;
+        background: #665AA6;
+        border-radius: 3px;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+    }
+
+    &:hover {
+        &:before,
+        &:after {
+            background: #4D468C;
+        }
+    }
+
+    &:after {
+        @include rotate(45deg);
+        left: 5.5px;
+    }
+
+    &:before {
+        @include rotate(135deg);
+    }
+
+    &.active {
+        &:after {
+            @include rotate(135deg);
+        }
+
+        &:before {
+            @include rotate(45deg);
+        }
+    }
+}
