@@ -1,13 +1,11 @@
-/////////////////////////
 function select_search(raw_data) {
   this.raw_data = raw_data;
   this.all_select; //處理完畢的全部參數
   this.save_show_arr = []; //打開選單時候讀的arr
   this.search_arr = []; //搜尋成功的時候存的arr
   this.is_search = false; //搜尋的開關
-  this.last_ele; //最後一個元素
 }
-//raw_data資料參數處理
+//TODO:raw_data資料參數處理
 select_search.prototype.data_process = function () {
   var select = this;
   var data_params_arr = select.raw_data;
@@ -34,9 +32,9 @@ select_search.prototype.data_process = function () {
     var tmp_format_text = val.format.select_text;
     var tmp_format_linkId = val.format.linkId;
     var tmp_format_mark = val.format.mark;
+    var tmp_format_disabled = val.format.disabled;
     var tmp_after_data = [];
     var search_condition_arr = val.search_condition_arr;
-
     //將placeholder塞進data
     $.each(tmp_data, function (key, value) {
       var tmp_obj = new Object({
@@ -44,6 +42,7 @@ select_search.prototype.data_process = function () {
         id: value[tmp_format_id],
         linkId: value[tmp_format_linkId],
         mark: value[tmp_format_mark],
+        disabled: value[tmp_format_disabled],
       });
       $.each(search_condition_arr, function (index, val) {
         tmp_obj[val] = value[val];
@@ -64,8 +63,8 @@ select_search.prototype.data_process = function () {
       search_condition_arr: search_condition_arr, //搜尋條件陣列
     };
     tmp_all_params_arr.push(select_params);
-    select.all_select = tmp_all_params_arr; //資料存回去
   });
+  select.all_select = tmp_all_params_arr; //資料存回去
 
   /**
    *placeholder顯示處理
@@ -97,10 +96,8 @@ select_search.prototype.data_process = function () {
     return tmp_ele_placeholder;
   }
 };
-//標記的資料能設定顏色
-select_search.prototype.mark_color = function () {};
 //打開插件顯示下拉資料
-//templateResult 跟  matcher官方插件都有範例
+//TODO:call_select templateResult 跟  matcher官方插件都有範例
 select_search.prototype.call_select = function (next_obj) {
   var select = this;
   var next_obj = next_obj || null;
@@ -111,7 +108,6 @@ select_search.prototype.call_select = function (next_obj) {
     next_obj.ele.empty();
     next_obj.ele.select2({
       data: next_obj.data,
-      // matcher: matchStart,
       language: {
         noResults: function (term) {
           return next_obj.no_results_text;
@@ -133,6 +129,7 @@ select_search.prototype.call_select = function (next_obj) {
       var system_width = width_calc(tmp_obj);
       var tmp_ele = tmp_obj.ele;
       var data = val.data;
+
       //呼叫這個plugin
       tmp_ele.select2({
         data: data,
@@ -419,35 +416,30 @@ select_search.prototype.call_select = function (next_obj) {
     return system_width;
   }
 };
-//選則後更新自己選單 選擇自己的obj然後帶入自己連連前面的linkID
-select_search.prototype.after_select_data = function (current_obj, linkID) {
-  var select = this;
-  select.call_select(current_obj);
-};
-//記下當下的選單資料
+
+//TODO:記下當下的選單資料
 select_search.prototype.show_current_data = function (current_obj, linkID) {
   var select = this;
   var select_val_linkId = linkID; //帶入的連結資料
   var tmp_arr = current_obj.data.filter(function (element, index, arr) {
-    if (element.linkId !== undefined) {
-      //選出部門代號相符的資料，以及帶入預設值
-      if (select_val_linkId == 'def') {
-        //如果是預設就回傳全部資料
-        return element.id !== '';
-      } else {
-        //回傳等於聯結資料和預設placeholder
-        return element.linkId == select_val_linkId || element.id === 'def';
-      }
-    } else {
-      //沒定義linkid的話就是第一個因此回傳全部資料
+    if (element.linkId == undefined) {
       return element.id !== '';
     }
+    //選出部門代號相符的資料，以及帶入預設值
+    if (select_val_linkId == 'def') {
+      //如果是預設就回傳全部資料
+      return element.id !== '';
+    } else {
+      //回傳等於聯結資料和預設placeholder
+      return element.linkId == select_val_linkId || element.id === 'def';
+    }
   });
+
   //修改完存進陣列在帶入此功能
   select.save_show_arr = tmp_arr;
 };
 
-//往前刷新自己的選單並給值給前一個select
+//TODO:往前刷新自己的選單並給值給前一個select
 //參數為當前的排序，和全部陣列
 select_search.prototype.reset_prev_list = function (
   self_sort,
@@ -470,45 +462,36 @@ select_search.prototype.reset_prev_list = function (
     var current_pre_obj = val;
     //先前陣列的當前ele 的val
     var current_pre_value = current_pre_obj.ele.val();
+    //找出當下的likId
+    var linkId;
     //如果是搜尋的話可能會帶入初始進來，因此要禁止
     if (current_pre_value == 'def') {
       return;
     }
-    //找出當下的likId
-    var linkId;
+
     if (index == 0) {
       linkId = select_data.linkId;
     } else {
       linkId = select.find_linkId(current_pre_obj, current_pre_value);
     }
-    // console.warn(
-    //   'arr',
-    //   all_pre_obj,
-    //   current_pre_obj.ele,
-    //   current_pre_obj,
-    //   current_pre_value,
-    //   linkId,
-    //   all_select[index + 1]
-    // );
-
     //往前刷新選單
     //選單要重製的話要先清空在重新讀取回傳的新選單再給值
 
     select.after_select_placeholder_change(current_pre_obj, current_pre_value);
 
-    select.after_select_data(current_pre_obj, linkId);
+    select.call_select(current_pre_obj);
     //自己的欄位重新給值
     current_pre_obj.ele.val(current_pre_value).trigger('change.select2');
 
     //最後一個就不用，利用陣列長度去判斷
     if (index + 1 < all_pre_obj.length) {
-      select.after_select_data(all_pre_obj[index + 1], 'def'); //先重製在重讀
+      select.call_select(all_pre_obj[index + 1]);
       all_pre_obj[index + 1].ele.val(linkId).trigger('change.select2');
     }
     select.placeholder_color_change(current_pre_obj.ele);
   });
 };
-//找出當下元素的link id
+//TODO:找出當下元素的link id
 //參數為當前的obj和當前的下拉vlaue
 select_search.prototype.find_linkId = function (obj, target) {
   var tmp_linkId;
@@ -519,7 +502,7 @@ select_search.prototype.find_linkId = function (obj, target) {
   });
   return tmp_linkId;
 };
-//判斷前一個元素是否為預設
+//TODO:判斷前一個元素是否為預設
 select_search.prototype.is_prev_val = function (obj) {
   var select = this;
   var all_select = select.all_select;
@@ -534,7 +517,21 @@ select_search.prototype.is_prev_val = function (obj) {
     }
   }
 };
-//找前一個元素的名字
+//TODO:判斷前面的所有的元素是全部是否為預設def
+select_search.prototype.is_prev_all_def = function (obj) {
+  var select = this;
+  var all_select = select.all_select;
+  var tmp_val_arr = all_select.map(function (item, index, array) {
+    return item.ele.val();
+  });
+  var new_val_arr = tmp_val_arr.splice(0, obj.sort);
+  if (new_val_arr.indexOf('def') !== -1) {
+    return true;
+  } else {
+    return false;
+  }
+};
+//TODO:找前一個元素的名字
 select_search.prototype.find_prev_text = function (obj, linkId) {
   var select = this;
   var target_id = linkId || 'def';
@@ -544,11 +541,6 @@ select_search.prototype.find_prev_text = function (obj, linkId) {
     return item.sort == parseInt(obj.sort) - 1;
   });
   if (tmp_prev_obj.length > 0) {
-    // if (tmp_prev_obj[0].ele.val() == 'def') {
-    //   return true;
-    // } else {
-    //   return false;
-    // }
     var linkId_text = tmp_prev_obj[0].data.filter(function (
       item,
       index,
@@ -556,23 +548,24 @@ select_search.prototype.find_prev_text = function (obj, linkId) {
     ) {
       return item.id == target_id;
     });
+
     return linkId_text[0].text;
   }
 };
-//重製所有選單
+//TODO:重製所有選單
 select_search.prototype.reset_all_list = function () {
   var select = this;
   var all_select = select.all_select;
   $.each(all_select, function (index, val) {
     val.ele.empty();
     select.after_select_placeholder_change(val, 'def');
-    select.after_select_data(val, 'def');
+    select.call_select(val);
   });
 };
-//重製自己後面的所有選單
+//TODO:重製自己後面的所有選單
 select_search.prototype.reset_after_my_ele = function (tmp_current_obj) {
   var select = this;
-  all_select = select.all_select;
+  var all_select = select.all_select;
   //找出所有後面的選單資料
   var after_obj_arr = all_select.filter(function (item, index, array) {
     return item.sort > tmp_current_obj.sort;
@@ -580,11 +573,10 @@ select_search.prototype.reset_after_my_ele = function (tmp_current_obj) {
   $.each(after_obj_arr, function (index, val) {
     val.ele.empty();
     select.after_select_placeholder_change(val, 'def');
-    select.after_select_data(val, 'def');
-    select.placeholder_color_change(val.ele);
+    select.call_select(val);
   });
 };
-//選擇後刷新placeholder文字
+//TODO:選擇後刷新placeholder文字
 select_search.prototype.after_select_placeholder_change = function (
   current_obj,
   val
@@ -595,9 +587,6 @@ select_search.prototype.after_select_placeholder_change = function (
   var sort = current_obj.sort;
   var current_data = current_obj.data[0];
   var tmp_is_prev = select.is_prev_val(current_obj);
-  var tmp_arr = all_select.filter(function (item, index, array) {
-    return item.sort > sort;
-  });
   if (val !== 'def') {
     current_data.text = current_data.after_select_placeholder;
   } else {
@@ -610,18 +599,34 @@ select_search.prototype.after_select_placeholder_change = function (
     }
   }
 };
-//placeholder文字顏色判斷
+//TODO:placeholder文字顏色判斷
 select_search.prototype.placeholder_color_change = function (ele) {
   var tmp_ele = ele;
   var render_text = tmp_ele
     .data('select2')
     .$selection.find('.select2-selection__rendered');
+  var container = tmp_ele.data('select2').$container;
   //如果選到def 預設選項顏色要給灰
   if (tmp_ele.val() == 'def') {
     render_text.css('color', '#808080');
+
+    if (container.hasClass('select2-container--disabled') == true) {
+      //如果是是disabled整個下拉要改變文字顏色
+      render_text.css('color', '#bcbcbc');
+    }
   } else {
     render_text.css('color', '');
   }
+};
+//TODO:初始Select2
+select_search.prototype.del_select2 = function () {
+  var select = this;
+  var all_select = select.all_select;
+  $.each(all_select, function (index, val) {
+    if (val.ele.attr('class') !== undefined) {
+      val.ele.select2('destroy');
+    }
+  });
 };
 /**
  *
@@ -629,26 +634,19 @@ select_search.prototype.placeholder_color_change = function (ele) {
  * @param {*} data_params_arr 原始資料
  *
  */
+//TODO:事件區
 function set_select_search(data_params_arr) {
   var new_select_search = new select_search(data_params_arr);
-  //資料處理
+  //資料預處理
   new_select_search.data_process();
-  //讓select都綁上plugin
+  //初始化select2
+  new_select_search.del_select2();
+  //---讓select都綁上plugin
   new_select_search.call_select();
+
   //所有下拉
   var all_select = new_select_search.all_select;
-  //取得第一個元素
-  var first_obj = all_select.filter(function (item, index, array) {
-    return item.sort == 0;
-  });
-  //第一個元素
-  var first_ele = first_obj[0].ele;
-  //取得最後一個元素
-  var last_obj = all_select.filter(function (item, index, array) {
-    return item.sort + 1 == all_select.length;
-  });
-  //將最後一個元素存進去
-  new_select_search.last_ele = last_obj[0].ele;
+
   //所有事件
   $.each(all_select, function (index, val) {
     var tmp_current_obj = val;
@@ -659,6 +657,10 @@ function set_select_search(data_params_arr) {
     var next_obj = all_select.filter(function (item, index, array) {
       return item.sort == self_sort + 1;
     });
+    //防呆重複綁定
+    tmp_ele.off('select2:select');
+    tmp_ele.off('select2:open');
+
     //選擇的時候
     tmp_ele.on('select2:select', function (e) {
       var select_data;
@@ -679,37 +681,27 @@ function set_select_search(data_params_arr) {
       ////如果從左邊依序選到右邊，只需使用連動選擇後往後更新選單(多層)的這個function-after_filter_all_data
       ////如果從中間開始挑(含最後一個)就要顧慮前面的選單資料reset_prev_list，跟後面的選單資料after_filter_all_data
       var is_search = new_select_search.is_search;
-      //判斷前面是不是預設def
-      var tmp_is_prev = new_select_search.is_prev_val(tmp_current_obj);
-      // console.warn(
-      //   '--',
-      //   first_ele.val(),
-      //   first_ele.val() !== 'def' && !tmp_is_prev && is_search == false,
-      //   tmp_is_prev,
-      //   val.sort,
-      //   is_search
-      // );
-      //條件:進來的可能不是第1個可能是第2個或第3個但確保前面都有數值(第一個不是預設DEF和前面的下拉不是DEF以及"沒使用搜尋")或我目前點的是第一個下拉(可以搜尋、點擊皆可)
-      if (
-        (first_ele.val() !== 'def' && !tmp_is_prev && is_search == false) ||
-        val.sort == 0
-      ) {
-        //不能是最後一個元素，找出隔壁元素，如果沒有就是最後一個
-        if (next_obj.length !== 0) {
-          //1、2、3、4 如果我從2開始選3跟4都要重製
-          //重製自己後面的所有選單，因為使用者可能已經全部選過一輪
-          new_select_search.reset_after_my_ele(tmp_current_obj);
-          //後面的下拉資料帶入
-          new_select_search.after_select_data(next_obj[0], tmp_ele.val());
+      //判斷前面全部的元素是不是預設def
+      var is_prev_all_def = new_select_search.is_prev_all_def(tmp_current_obj);
+      //條件:進來的可能是1、2、3、...個下拉，但確保前面的下拉都有數值(前面的下拉不是預設DEF以及"沒使用搜尋")或我目前點的是第一個下拉(可以搜尋、點擊皆可)
+      if ((!is_prev_all_def && is_search == false) || val.sort == 0) {
+        //不能是最後一個元素(判斷下一個下拉是否存在才跑)
+        if (next_obj.length == 0) {
+          //placeholder顏色處理
+          new_select_search.placeholder_color_change(tmp_ele);
+          return false;
         }
+        //1、2、3、4 如果我從2開始選3跟4都要重製
+        //重製自己後面的所有選單，因為使用者可能已經全部選過一輪
+        new_select_search.reset_after_my_ele(tmp_current_obj);
       } else {
-        //條件:1、2、3、4都沒有值我從中間(除了第一個)下拉做操作(從中間做搜尋操作)或是前面都有值，在接下來的下拉做搜尋操作也會進來
+        //條件:
+        //1、2、3、4都沒有值，我從中間(例如2)下拉做操作(從中間做搜尋操作)會進來
+        //或是前面都有值，在中間的下拉做搜尋操作也會進來，例如:如果從第三個下拉做搜尋，就要刷新1、2
 
-        //如果從中間開始選，例如:如果從3開始就要刷新1、2
         //往前刷新選單
         new_select_search.reset_prev_list(self_sort, all_select, select_data);
-        //刷新後面例如:從2開始要處理2後面的下拉
-        //處理後面的選單
+        //處理後面的選單，例如:從2開始要處理2後面的下拉
         new_select_search.reset_after_my_ele(tmp_current_obj);
       }
       //選完如果有使用搜尋框功能，選完要把她關掉
@@ -802,40 +794,9 @@ function set_select_search(data_params_arr) {
         }
       }
     });
-  }); // Select the option with a value of '1'
+  });
 }
-//預設值
-(function ($) {
-  $.fn.set_select_search_def_val = function (val) {
-    if (val !== '') {
-      this.val(val).trigger('change').trigger('select2:select');
-    }
-  };
-})(jQuery);
-//帶入自訂值
-(function ($) {
-  $.fn.set_select_search_add_option = function (id, text) {
-    var id = id;
-    var text = text;
-    if (id == '') {
-      id = 'null';
-    }
-    if (text == '') {
-      text = ' ';
-    }
-    var data = {
-      id: id,
-      text: text,
-    };
-    var select = this;
-    setTimeout(function () {
-      select.append(
-        "<option value='" + data.id + "' selected>" + data.text + '</option>'
-      );
-      select.trigger('change');
-    }, 0);
-  };
-})(jQuery);
+
 //封裝插件
 (function ($) {
   var methods = {
@@ -897,8 +858,36 @@ function set_select_search(data_params_arr) {
       });
       set_select_search(data_params_arr);
     },
-    //關閉
-    close: function () {},
+    setDefVal: function (val) {
+      //範例使用方式:
+      //$('你的下拉').setSelectSearch('setDefVal','001');
+      if (val !== '') {
+        this.val(val).trigger('change').trigger('select2:select');
+      }
+    },
+    addOption: function (id, text) {
+      //範例使用方式:
+      //$('你的下拉').setSelectSearch('addOption','001','選項文字');
+      var id = id;
+      var text = text;
+      if (id == '') {
+        id = 'null';
+      }
+      if (text == '') {
+        text = ' ';
+      }
+      var data = {
+        id: id,
+        text: text,
+      };
+      var select = this;
+      setTimeout(function () {
+        select.append(
+          "<option value='" + data.id + "' selected>" + data.text + '</option>'
+        );
+        select.trigger('change');
+      }, 0);
+    },
   };
 
   $.fn.setSelectSearch = function (method) {
